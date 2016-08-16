@@ -1,0 +1,368 @@
+<body>
+  <meta charset="utf-8">
+  <title>Luc J. Bourhis Musings - Viable Changes of Inertial Frames</title>
+  <link href="../../stylesheet.css" rel="stylesheet">
+  <meta content="nanoc 4.2.4" name="generator">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$']],
+        displayMath: [['$$', '$$']],
+      },
+      TeX: {
+        equationNumbers: {
+          autoNumber: "all"
+        },
+        Macros: {
+          Lie: ["\\text{Lie}(#1)", 1],
+    KLG: ["\\Lie{G} \\cap K"],
+    LorGen: ["\\mat{0}{\\frac{1}{c}#1}{\\epsilon c#1}{0}", 1],
+    projperp: [" P_{#1^\\perp}", 1],
+    reals: ["\\mathbb{R}"],
+    integers: ["\\mathbb{}"],
+    vec: ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2],
+    mat: ["\\begin{bmatrix} #1 & {#2}^T \\\\ #3 & #4 \\end{bmatrix}", 4],
+    Lie: ["\\text{Lie}(#1)", 1],
+    set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2]
+        }
+      },
+      menuSettings: {
+        zoom: "Double-Click"
+      },
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+
+  <div id="main">
+    
+    <h1 id="which-transforms-are-viable-to-change-from-one-inertial-frame-to-another">Which transforms are viable to change from one inertial frame to another?</h1>
+    
+    <h2 id="introduction">Introduction</h2>
+    
+    <p>Inertial frames of reference (or more concisely frames thereafter) and the transforms of space and time coordinates of an event in one frame into its coordinates in another frame (or more concisely transforms thereafter) are one of the pillar of physics . The purpose of this article is to discover all the viable transforms under a minimalistic set of postulates.</p>
+    
+    <p>As it is well known, the transforms which have been in use for more than a century are the Lorentz transforms. Their historical derivation by Einstein in his seminal 1905 paper <a href="#Einstein:1905" class="bibliography-reference">[Einstein:1905]</a> relies on the postulate that the speed of light is the same in every direction and in every frame.  But a much stronger theorem relates Lorentz transforms and electromagnetism: Maxwell equations are invariant under them, as shown by Einstein in the same paper. In the course of the 20th century, two other fundamental interactions were discovered, the weak interaction and the strong interaction, whereas electromagnetism got quantified. Eventually, two theories emerged: Quantum Chromodynamics, for the strong interaction, and the Electroweak Theory, for the unification of the weak and electromagnetic interactions. Each of these theories is invariant under Lorentz transforms. Therefore their historical derivation is a biased one as it unduly emphasises a special connection to electromagnetism.</p>
+    
+    <p>The only other transforms to have found a widespread use in physics are the Galilean transforms, which had been unchallenged from the beginning of modern physics in the 16th century to the middle of the 19th century when tensions started to appear with electromagnetism. At the time, Galilean transforms were motivated by the postulates of absolute time and absolute length, which were stronly motivated experimentally. Nowadays we know that Lorentz transforms degenerate into Galilean transforms when the relative speed <script type="math/tex">v</script> between the frames is small compared to the speed of light <script type="math/tex">c</script>, and that this is why they had been successful before interferometry made possible experiments sensitive enough to probe effects proportional to <script type="math/tex">\left(\frac{v}{c}\right)^2</script> which appear as Lorentz transform deviates from Galilean transforms (Michelson-Morley experiments for example). Thus, Galilean transforms seem to derived either from obsolete concepts or from a special role played by the speed of light.</p>
+    
+    <p>However, it has been realised since the 70’s that very general postulates which do not involve the properties of any particular physical theory, and especially which do not rely on any assumption regarding the speed of light, can be used to demonstrate that the only possible transforms are either Galilean transforms or Lorentz transforms. I am referring here to the paper of Lee and Kalotas <a href="#Lee:1975" class="bibliography-reference">[Lee:1975]</a> and Lévy-Leblond <a href="#Levy-Leblond:1976" class="bibliography-reference">[Levy-Leblond:1976]</a> and Lévy-Leblond and Provost <a href="#Levy-Leblond:1979" class="bibliography-reference">[Levy-Leblond:1979]</a>. The purpose of this article is to give another demonstration of this result using a different approach: Lie Groups.</p>
+    
+    <p>The main advantage is that I will be able to reason with three dimensions of space throughout, contrary to Lévy-Leblond who first derived transforms for one dimension of time and one dimension of space, then extrapolated the results to three dimensions of space by using an argument of isotropy. As for Lee and Kalotas, they started with the assumption that the transforms for the two dimensions of space perpendicular to the speed between the frames was the identity, only referring to “well-known arguments” to justify it. I will not need such preparatory arguments.</p>
+    
+    <p>The drawback is that those simplifications allowed the first two cited papers  <a href="#Lee:1975" class="bibliography-reference">[Lee:1975]</a> and <a href="#Levy-Leblond:1976" class="bibliography-reference">[Levy-Leblond:1976]</a> to rely only on elementary mathematics. It should be noted that last paper <a href="#Levy-Leblond:1979" class="bibliography-reference">[Levy-Leblond:1979]</a> used a powerful theorem about matrix group whose elements are parametrised by a single scalar (the speed between the two frames), allowing the authors to greatly simplify the discussion. This theorem is actually a special case of the theory of Lie groups and my demonstration is therefore conceptually closer to the paper of Lévy-Leblond and Provost <a href="#Levy-Leblond:1979" class="bibliography-reference">[Levy-Leblond:1979]</a>.</p>
+    
+    <p>Lie groups form a large and complex field of mathematics but fortunately we will only need a handful of their most simple properties. Nevertheless my demonstration does require more mathematical background than those of Lee and Kalotas <a href="#Lee:1975" class="bibliography-reference">[Lee:1975]</a>, and Lévy-Leblond <a href="#Levy-Leblond:1976" class="bibliography-reference">[Levy-Leblond:1976]</a>. I greatly encourage readers to read them.</p>
+    
+    <h2 id="postulates">Postulates</h2>
+    
+    <p>We will first list our postulates and then we will briefly motivate them.</p>
+    
+    <p><strong>Postulate 1</strong>: linearity.</p>
+    
+    <p>Thus the mapping of any time <script type="math/tex">t</script> and any triplet of spatial coordinates <script type="math/tex">x</script> in one frame onto their equivalent <script type="math/tex">t'</script> and <script type="math/tex">x'</script> in another frame has a matrix <script type="math/tex">\mathcal{M}</script> and we choose the following convention:</p>
+    
+    <script type="math/tex; mode=display">\vec{t'}{x'} = \mathcal{M} \vec{t}{x}</script>
+    
+    <p>The problem is therefore transformed into the search of a set of viable <script type="math/tex">4 \times 4</script> matrices. We will denote this set by <script type="math/tex">G</script>. We will write the matrices by block as</p>
+    
+    <script type="math/tex; mode=display">\mathcal{M} = \mat{a}{u}{v}{M}</script>
+    
+    <p>where <script type="math/tex">a</script> is a scalar, <script type="math/tex">u</script> and <script type="math/tex">v</script> are 3-vectors (in column), and <script type="math/tex">M</script> is a <script type="math/tex">3 \times 3</script> matrix – we will denote by <script type="math/tex">\reals^3</script> the set of all such vectors. This block decomposition means that</p>
+    
+    <script type="math/tex; mode=display">% <![CDATA[
+    \begin{align*}
+    t' &= a t + u^T x, \\
+    x' &= v t + M x.
+    \end{align*} %]]></script>
+    
+    <p><strong>Postulate 2</strong>: Spatial isometries form a strict subgroup <script type="math/tex">O</script> of <script type="math/tex">G</script>.</p>
+    
+    <p>Spatial isometries are the matrices</p>
+    
+    <script type="math/tex; mode=display">\mathcal{R} = \mat{1}{0}{0}{R}</script>
+    
+    <p>where <script type="math/tex">R</script> is orthogonal, i.e. <script type="math/tex">R R^T = I</script> where <script type="math/tex">I</script> is the identity matrix in dimension 3. This includes the subgroup of rotations, as well as the space inversion, which physicists call parity,</p>
+    
+    <script type="math/tex; mode=display">P = \mat{1}{0}{0}{-I}.</script>
+    
+    <p><strong>Postulate 3</strong>: <script type="math/tex">G</script> does not contain any change of scale</p>
+    
+    <p>A change of scale has a diagonal matrix with positive coefficients, i.e.</p>
+    
+    <script type="math/tex; mode=display">% <![CDATA[
+    \begin{align*}
+    t' &= a_0 t \\
+    x'_1 &= a_1 x_1 \\
+    x'_2 &= a_2 x_2 \\
+    x'_3 &= a_3 x_3
+    \end{align*} %]]></script>
+    
+    <p>where <script type="math/tex">x_i</script> and <script type="math/tex">x'_i</script> are the spatial coordinates, components of the vectors <script type="math/tex">x</script> and <script type="math/tex">x'</script> used so far, and <script type="math/tex">(a_0, a_1, a_2, a_3)</script> are positive constants.</p>
+    
+    <p><strong>Postulate 4</strong>: <script type="math/tex">G</script> is a Lie subgroup of the Lie group of <script type="math/tex">4 \times 4</script> matrices.</p>
+    
+    <h2 id="motivation-of-the-postulates">Motivation of the postulates</h2>
+    
+    <p><em>Postulate 1:</em> The classic argument for linearity is the homogeneity of space-time but a better, more modern argument is simply to state that we search the transforms in the tangent space of “curved spacetime” (i.e. spacetime manifold in rigorous mathematical terms). This does not mean assuming General Relativity, not even the existence of a spacetime metric.</p>
+    
+    <p><em>Postulate 2:</em> Isometries are practically important because they change the orientation and the handedness of frame axes, an operation which is a very common occurence in the practice of physics. They are also theoretically important because verifying whether a physical model is invariant under rotations or space inversion is mundane. It should be noted that we do not make any preconceived statement about whether the model has such an invariance. For example, the Electroweak Model mentioned in the introduction is not invariant under parity.</p>
+    
+    <p><em>Postulate 3:</em> We assume we have fixed units of time and lengths in all frames once and for all, and that from that point on, we are interested only in all the other transforms.</p>
+    
+    <p><em>Postulate 4:</em> The group structure directly emerges from the definition of changes of frame:</p>
+    
+    <ol>
+      <li>the identity matrix correspond to no change of frame;</li>
+      <li>given the change of frame <script type="math/tex">(t,x) \mapsto (t',x')</script>, we shall also have the change of frame <script type="math/tex">(t',x') \mapsto (t,x)</script>, and if <script type="math/tex">M</script> is the matrix of the former, then <script type="math/tex">M^{-1}</script> is the matrix of the latter;</li>
+      <li>given the change of frame <script type="math/tex">(t,x) \mapsto (t',x')</script> followed by the change of frame <script type="math/tex">(t',x') \mapsto (t'',x'')</script>, we shall also have the change of frame <script type="math/tex">(t,x) \mapsto (t'',x'')</script>, and if <script type="math/tex">M</script> and <script type="math/tex">M'</script> are the matrix of the first and of the second respectively, then <script type="math/tex">MM'</script> is the matrix of the last.</li>
+    </ol>
+    
+    <p>The postulated Lie structure is as mundane, since every single non-discrete matrix group of practical which have found some use in physics is a Lie group. Instead of postulating the Lie structure, we could have postulated that <script type="math/tex">G</script> is topologically closed and then invoked Cartan’s theorem to conclude that <script type="math/tex">G</script> is a Lie subgroup of the Lie group of <script type="math/tex">4 \times 4</script> matrices. Whether requiring that any convergent sequence of matrices in <script type="math/tex">G</script> converges in <script type="math/tex">G</script>, for example, is more intuitive than requiring a Lie structure in the first place is a moot point for a theoretical physicist in the 21st century, in my humble opinion!</p>
+    
+    <h2 id="primer-on-lie-groups">Primer on Lie groups</h2>
+    
+    <p>We will succintly give here the essential properties we will use in our demonstration.</p>
+    
+    <p><em>Commutator</em>: for any matrix <script type="math/tex">A</script> and <script type="math/tex">B</script>, it is defined as <script type="math/tex">[A,B] = AB - BA</script>. Mathematicians name it “Lie bracket” instead.</p>
+    
+    <p><em>Matrix Lie algebra</em>: it is a linear subspace <script type="math/tex">H</script> of the linear space of all matrices with the extra property that, for any <script type="math/tex">A</script> and <script type="math/tex">B</script> in <script type="math/tex">H</script>, <script type="math/tex">[A,B]</script> is also in <script type="math/tex">H</script>.</p>
+    
+    <p><em>Matrix exponential</em>: for any matrix <script type="math/tex">A</script>, it is defined as the convergent series</p>
+    
+    <script type="math/tex; mode=display">\exp A = \sum_{n=0}^{+\infty} \frac{1}{n!}A^n . \label{matrix:exp}</script>
+    
+    <p><em>Matrix Lie group</em>: it is a group <script type="math/tex">G</script> of matrices such that there exists a Lie algebra <script type="math/tex">H</script> such that <script type="math/tex">\exp H</script> is the connected component of the identity in <script type="math/tex">G</script>. We will denote <script type="math/tex">H</script> by <script type="math/tex">\Lie{G}</script>.</p>
+    
+    <p>This may seem rather abstract but it is actually just a different, powerful, way to look at all the classic matrix groups.</p>
+    
+    <h2 id="derivation-of-the-group-g-of-viable-transforms">Derivation of the group <script type="math/tex">G</script> of viable transforms</h2>
+    
+    <p>Our strategy will be to characterise <script type="math/tex">\Lie{G}</script> and then use the matrix exponential to find <script type="math/tex">G</script>. We start by demonstrating a simple lemma we will reuse a couple of time.</p>
+    
+    <p><strong>Lemma 1</strong>: If <script type="math/tex">\mathcal{A} = \mat{a}{0}{0}{M} \in \Lie{G}</script>, then <script type="math/tex">a=0</script> and <script type="math/tex">M</script> is antisymmetric, i.e. <script type="math/tex">\mathcal{A} \in \Lie{O}</script>.</p>
+    
+    <p><em>Proof.</em> With <script type="math/tex">A=\frac{M+M^T}{2}</script> and <script type="math/tex">B=\frac{M-M^T}{2}</script>, we can write <script type="math/tex">\mathcal{A} = \mat{0}{0}{0}{A} + \mat{a}{0}{0}{B}</script>. On the right-hand side, the first term belongs to <script type="math/tex">\Lie{O}</script> and therefore the second term <script type="math/tex">\mathcal{B}</script> belongs to <script type="math/tex">\Lie{G}</script>. But then <script type="math/tex">\exp \mathcal{B} = \mat{\exp a}{0}{0}{\exp B}</script>. Postulate 3 requires that <script type="math/tex">\exp \mathcal{B}</script> is a spatial isometry, and therefore that <script type="math/tex">a=0</script> and <script type="math/tex">(\exp B)(\exp B)^T = I</script>. Since <script type="math/tex">B</script> is symmetric, this means <script type="math/tex">\exp 2B = I</script>, and therefore that <script type="math/tex">B=0</script>. This completes the proof.</p>
+    
+    <p>Then we move to the keystone of our demonstration, as the subsequent work will simply be the computation of matrix exponentials.</p>
+    
+    <p><strong>Lemma 2</strong>: One and only one of the following vector space is a subspace of <script type="math/tex">\Lie{G}</script> and <script type="math/tex">\Lie{G}</script> is the sum of <script type="math/tex">\Lie{O}</script> and of this subspace:</p>
+    
+    <script type="math/tex; mode=display">% <![CDATA[
+    \begin{align}
+    K_G &= \set{\mat{0}{u}{0}{0}}{u \in \reals^3}  \tag{I} \\
+    K_C &= \set{\mat{0}{0}{v}{0}}{v \in \reals^3}  \tag{II} \\
+    K_\epsilon &= \set{\LorGen{u}}{u \in \reals^3} \tag{III} \\
+    \end{align} %]]></script>
+    
+    <p>where <script type="math/tex">c > 0</script> and <script type="math/tex">\epsilon = \pm 1</script> are constants.</p>
+    
+    <p><em>Proof.</em> Let us consider a generic element <script type="math/tex">A=\mat{a}{u}{v}{M} \in \Lie{G}</script>. Since <script type="math/tex">P \in G</script>, <script type="math/tex">PAP^{-1}</script> is also in <script type="math/tex">\Lie{G}</script>, and therefore <script type="math/tex">B = \frac{1}{2}(A + PAP^{-1})</script> too. But <script type="math/tex">B=\mat{a}{0}{0}{M}</script> and lemma 1 implies that <script type="math/tex">a=0</script> and <script type="math/tex">M</script> is antisymmetric. Thus <script type="math/tex">A = \mat{0}{u}{v}{0} + \mat{0}{0}{0}{M}</script> and the last term is in <script type="math/tex">\Lie{G}</script>, which proves that <script type="math/tex">\mat{0}{u}{v}{0} \in \Lie{G}</script>. Thus we have shown that any element of <script type="math/tex">\Lie{G}</script> is the sum of an element of <script type="math/tex">\Lie{O}</script> and of an element of the vector space <script type="math/tex">K=\set{\mat{0}{u}{v}{0}}{u,v \in \reals^3}</script> and we are left with characterising <script type="math/tex">\KLG</script>. The case <script type="math/tex">\KLG = \{ 0 \}</script> is ruled out by our second postulate, as this would leave only isometries. Thus we have three cases to study.</p>
+    
+    <p><em>Case 1:</em> <script type="math/tex">\KLG</script> has an element <script type="math/tex">A=\mat{0}{0}{v}{0}</script> with <script type="math/tex">v \ne 0</script>.</p>
+    
+    <p>Then for any rotation <script type="math/tex">\mathcal{R} = \mat{1}{0}{0}{R}</script> and any real <script type="math/tex">\lambda</script>, <script type="math/tex">A'=\lambda\mathcal{R}A\mathcal{R}^{-1} \in \Lie{G}</script> but <script type="math/tex">A'=\mat{0}{0}{\lambda Rv}{0}</script> and <script type="math/tex">\lambda R v</script> spans <script type="math/tex">\reals^3</script> when <script type="math/tex">\lambda</script> spans <script type="math/tex">\reals</script> and <script type="math/tex">R</script> spans all the rotations. Thus <script type="math/tex">K_G \subset \KLG</script>.</p>
+    
+    <p>Then let <script type="math/tex">B=\mat{0}{p}{q}{0}</script> be an element of <script type="math/tex">\Lie{G} \cap K</script>. For any <script type="math/tex">A = \mat{0}{0}{v}{0} \in K_G</script>, we have therefore <script type="math/tex">[A,B] \in \Lie{G}</script> but <script type="math/tex">[A,B]=\mat{-p^T v}{0}{0}{vp^T}</script>. Lemma 1 requires that <script type="math/tex">p^Tv=0</script>. Since <script type="math/tex">v</script> can be any 3-vector, this implies that <script type="math/tex">p=0</script>. This complete the proof for this case.</p>
+    
+    <p><em>Case 2:</em> <script type="math/tex">\KLG</script> has an element <script type="math/tex">A=\mat{0}{u}{0}{0}</script> with <script type="math/tex">u \ne 0</script>.</p>
+    
+    <p>The analysis is completely similar to the previous case, replacing <script type="math/tex">K_G</script> with <script type="math/tex">K_C</script>.</p>
+    
+    <p><em>Case 3:</em> <script type="math/tex">\KLG</script> has an element <script type="math/tex">A=\mat{0}{u}{v}{0}</script> with <script type="math/tex">u \ne 0</script> and <script type="math/tex">v \ne 0</script>.</p>
+    
+    <p>Let <script type="math/tex">R_0</script> be the rotation of angle <script type="math/tex">\pi</script> around the bissector of <script type="math/tex">(u,v)</script>. Then it exists <script type="math/tex">\kappa > 0</script> such that <script type="math/tex">Rv = \kappa u</script> and <script type="math/tex">Ru = \frac{1}{\kappa} v</script>. Then, with <script type="math/tex">\mathcal{R}_0 = \mat{1}{0}{0}{R_0}</script>, we have <script type="math/tex">B=\mathcal{R}_0A\cal{R}_0^{-1} \in G</script> and therefore <script type="math/tex">[A,B] \in G</script>. But <script type="math/tex">B=\mat{0}{\frac{1}{\kappa} v}{\kappa u}{0}</script>. Thus</p>
+    
+    <script type="math/tex; mode=display">[A,B] = \mat{\kappa u^2 - \frac{1}{\kappa}v^2}{0}{0}{\frac{1}{\kappa}vv^T - \kappa uu^T}.</script>
+    
+    <p>Then lemma 1 requires that</p>
+    
+    <script type="math/tex; mode=display">% <![CDATA[
+    \begin{align*}
+    \kappa u^2 &= \frac{1}{\kappa} v^2,\\
+    \kappa uu^T &= \frac{1}{\kappa} vv^T.
+    \end{align*} %]]></script>
+    
+    <p>Multiplying both sides of the second equation with <script type="math/tex">v</script> on the right shows that <script type="math/tex">v</script> is colinear to <script type="math/tex">u</script>, and the first equation then shows that <script type="math/tex">v=\epsilon\kappa u</script> where <script type="math/tex">\epsilon=\pm 1</script>. Introducing <script type="math/tex">c=\sqrt{\kappa}</script> and <script type="math/tex">w=cu</script>, we have <script type="math/tex">v=\epsilon c w</script> and therefore <script type="math/tex">A=\LorGen{w}</script>.</p>
+    
+    <p>Then for any rotation <script type="math/tex">\mathcal{R} = \mat{1}{0}{0}{R}</script> and any real <script type="math/tex">\lambda</script>, <script type="math/tex">A'=\lambda\mathcal{R}A\mathcal{R}^{-1} \in \Lie{G}</script> but <script type="math/tex">A'=\LorGen{\lambda Rw}</script> and since <script type="math/tex">\lambda Rw</script> spans <script type="math/tex">\reals^3</script> when <script type="math/tex">\lambda</script> spans <script type="math/tex">\reals</script> and <script type="math/tex">R</script> spans all <script type="math/tex">3 \times 3</script> rotations, we have proved that <script type="math/tex">K_\epsilon \subset \KLG</script>.</p>
+    
+    <p>Let <script type="math/tex">B=\mat{0}{p}{q}{0}</script> be an element of <script type="math/tex">\KLG</script>. For any <script type="math/tex">A=\LorGen{w} \in K_\epsilon</script>, <script type="math/tex">[A,B] \in \Lie{G}</script> but</p>
+    
+    <script type="math/tex; mode=display">[A,B] = \mat{\frac{1}{c}w^Tq - \epsilon c p^Tw}{0}{0}{\epsilon c w p^T - \frac{1}{c} q w^T}</script>
+    
+    <p>and lemma 1 then requires that</p>
+    
+    <script type="math/tex; mode=display">% <![CDATA[
+    \begin{align*}
+    \frac{1}{c}w^Tq &= \epsilon c p^Tw, \\
+    \epsilon c w p^T &- \frac{1}{c} q w^T = -\epsilon c p w^T + \frac{1}{c} w q^T.
+    \end{align*} %]]></script>
+    
+    <p>Multiplying the second equation by <script type="math/tex">w</script> on the right gives
+    <script type="math/tex">\left(\epsilon c p^T w - \frac{1}{c}q^T w \right)w = \left(\frac{1}{c}q - \epsilon c p \right)w^2</script></p>
+    
+    <p>and therefore, using the first equation, and <script type="math/tex">w \ne 0</script>, we get <script type="math/tex">q=\epsilon c^2 p</script>, i.e. <script type="math/tex">B \in K_\epsilon</script>. We have therefore demonstrated that <script type="math/tex">\KLG \subset K_\epsilon</script>. With the previous opposite inclusion, this completes the proof of this case and therefore of the proof of lemma 2 too.</p>
+    
+    <p>We can now prove the following theorem.</p>
+    
+    <p><em>Theorem 1</em>: A group <script type="math/tex">G</script> of transforms satisfying postulate 1–3 is one of the following group:</p>
+    
+    <ul>
+      <li>the Caroll group (I)</li>
+      <li>the Galilean group (II)</li>
+      <li>the Lorentz group (III$^+$)</li>
+      <li>the group of rotations in spacetime (III$^-$)</li>
+    </ul>
+    
+    <p><em>Proof</em> Those four cases obviously correspond to the four cases of lemma 2. Thus let us review them in turn.</p>
+    
+    <p><em>Case I and II</em>: it is trivial to verify that any <script type="math/tex">K \in K_G</script> is such that <script type="math/tex">K^2 = 0</script> and therefore <script type="math/tex">K^n = 0</script> for any integer <script type="math/tex">n \ge 2</script>. As a result, the exponential series is trivial: <script type="math/tex">\exp K = I + K</script>. Thus in case I, this gives</p>
+    
+    <script type="math/tex; mode=display">\exp K = \mat{1}{u}{0}{I}</script>
+    
+    <p>and the transforms</p>
+    
+    <script type="math/tex; mode=display">% <![CDATA[
+    \begin{align}
+    t' &= t - u^T x,\\
+    x' &= x.
+    \end{align} %]]></script>
+    
+    <p>Lévy-Leblond named them “Carrol transforms” in <a href="#Levy-Leblond:1965" class="bibliography-reference">[Levy-Leblond:1965]</a>, a term he reused in <a href="#Levy-Leblond:1979" class="bibliography-reference">[Levy-Leblond:1979]</a>, in eqn (63). The first paper presents an interesting physical discussion of them (it is unfortunately in French!).</p>
+    
+    <p>In case II, this gives</p>
+    
+    <script type="math/tex; mode=display">\exp K = \mat{1}{0}{v}{I}</script>
+    
+    <p>and the transforms are the Galilean transforms</p>
+    
+    <script type="math/tex; mode=display">% <![CDATA[
+    \begin{align}
+    t' &= t,\\
+    x' &= x - vt.
+    \end{align} %]]></script>
+    
+    <p><em>Case III^+/-^</em>: the computation of the exponential is only slightly more involved. We will compute both cases at the same time by keeping <script type="math/tex">\epsilon</script> unspecified. First, let us write <script type="math/tex">u = \varphi \hat{u}</script> where <script type="math/tex">\hat{u}</script> is a unit vector. Then <script type="math/tex">\newcommand{Keps}{\hat{K}_\epsilon} K_\epsilon = \varphi\Keps</script> where <script type="math/tex">\Keps = \mat{0}{\frac{1}{c}\hat{u}}{\epsilon c \hat{u}}{0}</script>. Then <script type="math/tex">\newcommand{\PPu}{\mat{1}{0}{0}{P_u}} \Keps^2 = \epsilon\mathcal{P}_u</script> where <script type="math/tex">\mathcal{P}_u=\PPu</script> and <script type="math/tex">P_u = \hat{u}\hat{u}^T</script> is the projection onto <script type="math/tex">u</script>. Therefore, on one hand, for any <script type="math/tex">n \ge 1</script>, <script type="math/tex">\Keps^{2n} = \epsilon^n \mathcal{P}_u</script> since <script type="math/tex">P_u^n = P_u</script> because <script type="math/tex">P_u</script> is a projector. On the other hand, <script type="math/tex">\Keps^{2n+1} = \epsilon^n \mathcal{P}_u \Keps = \epsilon^n\Keps</script>. Thus the exponential series reads</p>
+    
+    <script type="math/tex; mode=display">\exp K_\epsilon = I
+    + \underbrace{\sum_{n=1}^{+\infty} \epsilon^n \frac{\varphi^{2n}}{(2n)!}}_{\displaystyle \begin{cases}
+    \cos\varphi - 1, \text{ if $\epsilon=-1$}\\
+    \cosh\varphi - 1, \text{ if $\epsilon=1$}
+    \end{cases}} \mathcal{P}_u
+    + \underbrace{\sum_{n=0}^{+\infty} \epsilon^n \frac{\varphi^{2n+1}}{(2n+1)!}}_{\displaystyle \begin{cases}
+    \sin\varphi, \text{ if $\epsilon=-1$}\\
+    \sinh\varphi, \text{ if $\epsilon=1$}
+    \end{cases}} \Keps</script>
+    
+    <p>Thus we have the two cases</p>
+    
+    <script type="math/tex; mode=display">\newcommand{\boostmat}[2]{
+        \mat{#1}{\frac{1}{c}#2\ \hat{u}}{c#2\ \hat{u}}{#1\ P_u + \projperp{u}}
+    }
+    \begin{cases}
+    \exp K_{-} = \boostmat{\cos\varphi}{\sin\varphi}, \text{ in case (III$^-$),} \\
+    \exp K_{+} = \boostmat{\cosh\varphi}{\sinh\varphi}, \text{ in case (III$^+$)}
+    \end{cases}</script>
+    
+    <p>where <script type="math/tex">\projperp{u} = I - P_u</script> is the projection onto the plane <script type="math/tex">u^\perp</script> perpendicular to <script type="math/tex">u</script>. Thus the transformations read</p>
+    
+    <script type="math/tex; mode=display">% <![CDATA[
+    \newcommand{\boosttrans}[2]{
+        \begin{aligned}
+        t' &= t #1 -\frac{\hat{u}^T x}{c} #2,\\
+        x'_\shortparallel &= x_\shortparallel #1 - ct \hat{u} #2,\\
+        x'_\perp &= x_\perp,
+        \end{aligned}
+    }
+    \begin{cases}
+    \left\{ \boosttrans{\cos\varphi}{\sin\varphi} \right., \text{ in case (III$^-$),} \\
+    \\
+    \left\{ \boosttrans{\cosh\varphi}{\sinh\varphi} \right., \text{ in case (III$^+$).}
+    \end{cases} %]]></script>
+    
+    <p>where <script type="math/tex">x_\shortparallel</script> is the component of <script type="math/tex">x</script> parallel to <script type="math/tex">u</script> whereas <script type="math/tex">x_\perp</script> is the component perpendicular to <script type="math/tex">u</script>.</p>
+    
+    <p>In case (III$^+$), we recognise a Lorentz boost, parametrised by the rapidity <script type="math/tex">\varphi</script> and the direction of the boost <script type="math/tex">\hat{u}</script>. The case (III$^-$) is not mainstream but time and space are mixed as two spatial coordinates would be by a rotation of angle <script type="math/tex">\varphi</script>, hence the name “rotation in spacetime”.</p>
+    
+    <p>Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but also two exotic groups which have never played any major role in change of inertial frames. But we can prune them with an additional hypothesis.</p>
+    
+    <h2 id="causality">Causality</h2>
+    
+    <p>The concept of cause and effect would be meaningless if all observers could not agree which of two events happens first. Hence the following requirement</p>
+    
+    <p><em>Postulate 4: Causality.</em> There exists a non-empty set <script type="math/tex">E</script> of events so that for any two events <script type="math/tex">e_1</script> and <script type="math/tex">e_2</script> such that <script type="math/tex">e_1</script> is seen to appear before <script type="math/tex">e_2</script> in one frame, then in any other frame, <script type="math/tex">e_1</script> is also seen to appear before <script type="math/tex">e_2</script>.</p>
+    
+    <p>Because of linearity, this is equivalent to state that for any <script type="math/tex">t > 0</script>, there exists spatial coordinates <script type="math/tex">x</script> such that for every <script type="math/tex">\mathcal{M} \in G</script>, <script type="math/tex">\vec{t'}{x'} = \mathcal{M} \vec{t}{x}</script> is such that <script type="math/tex">t'>0</script>. Then we wish to prove</p>
+    
+    <p><em>Lemma 2</em>: The Carroll group and the group of rotations in spacetime violate causality.</p>
+    
+    <p>For the carroll group, <script type="math/tex">t' = t\left(1 - u^T \frac{x}{t}\right)</script>. But for every <script type="math/tex">x \in \reals^3</script>, one can find big enough a vector <script type="math/tex">u</script> such that the factor of <script type="math/tex">t</script> is negative.</p>
+    
+    <p>For the rotations in spacetime, <script type="math/tex">t' = t\cos\varphi\left(1 - \frac{1}{c}\hat{u}^T \frac{x}{t}\tan\varphi\right)</script>. Since <script type="math/tex">\lim_{\varphi \to +\infty} \tan\varphi = +\infty</script>, for any <script type="math/tex">x \in \reals^3</script>, one can choose <script type="math/tex">\varphi</script> such that the factor of <script type="math/tex">t\cos\varphi</script> is negative. This concludes the proof.</p>
+    
+    <p>We can now conclude with</p>
+    
+    <p><em>Theorem 2</em>: The only groups <script type="math/tex">G</script> of transforms satisfying postulates 1–4 are Galilean group and Lorentz group.</p>
+    <h2>Bibliography</h2>
+    <div class="bibliography_entry" id="Einstein:1905">
+      [Einstein:1905]
+      Albert  Einstein.
+      Zur Elektrodynamik bewegter Körper,
+      <em>Annalen der Physik</em>,
+      17:891,
+      1905
+      — An English translation is available at <https:></https:> both as a web page and as a print-quality PDF
+    </div>
+    <div class="bibliography_entry" id="Lee:1975">
+      [Lee:1975]
+      A. R.  Lee, and T. M.  Kalotas.
+      Lorentz transformations from the first postulate,
+      <em>American Journal of Physics</em>,
+      43:434--437,
+      1975
+    </div>
+    <div class="bibliography_entry" id="Levy-Leblond:1976">
+      [Levy-Leblond:1976]
+      Jean-Marc Lévy- Leblond.
+      One more derivation of the Lorentz transformation,
+      <em>American Journal of Physics</em>,
+      44:271,
+      1976
+    </div>
+    <div class="bibliography_entry" id="Levy-Leblond:1979">
+      [Levy-Leblond:1979]
+      Jean-Marc Lévy- Leblond, and Jean-Pierre  Provost.
+      Additivity, rapidity, relativity,
+      <em>American Journal of Physics</em>,
+      47:1045,
+      1979
+    </div>
+    <div class="bibliography_entry" id="Levy-Leblond:1965">
+      [Levy-Leblond:1965]
+      Jean-Marc Lévy- Leblond.
+      Une nouvelle limite non-relativiste du groupe de Poincaré,
+      <em>Annales de l'I.H.P. Physique théorique</em>,
+      3:1--12,
+      1965
+    </div>
+  </div>
+  <div id="sidebar">
+    <a href="../../fr/">
+      <img src="../../fr/icon.png">
+    </a>
+    <a href="../">
+      <img src="../icon.png">
+    </a>
+    <div class="whoami">I am Luc J. Bourhis, physicist and software developer in Paris, France. This is my personal blog dedicated to my scientific and computing hobbies.</div>
+    <div class="topics">computing</div>
+    <ul class="title-list">
+      <li class="title"><a href="../fast-matrix-multiplication/">Fast Matrix Multiplication</a></li>
+    </ul>
+    <div class="topics">physics</div>
+    <ul class="title-list">
+      <li class="title"><a href="./">Viable Changes of Inertial Frames</a></li>
+    </ul>
+  </div>
+
+</body>
