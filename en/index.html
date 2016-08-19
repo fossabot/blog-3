@@ -5,14 +5,31 @@
   <meta content="nanoc 4.2.4" name="generator">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      // minimalistic: we only need TeX and the Mathjax menu is useful
+      extensions: ["tex2jax.js", "MathMenu.js"],
+    
+      // SVG is the fastest
+      jax: ["input/TeX", "output/SVG"],
+    
+      // we do not need delimiters as kramdown will transform a $$ XXX $$
+      // into span's or div's, the inner ones containing XXX,
+      // and with the appropriate id's and classes for an accompanying
+      // script to run Mathjax to render the content of those tags.
       tex2jax: {
-        inlineMath: [['$','$']],
-        displayMath: [['$$', '$$']],
+        inlineMath: [],
+        displayMath: [],
       },
+    
       TeX: {
+        // Minimalistic
+        extensions: ["AMSmath.js", "AMSsymbols.js"],
+    
+        // this is part of our handmade management of equation numbers
         equationNumbers: {
-          autoNumber: "all"
+          autoNumber: "AMS"
         },
+    
+        // this is part of our handmade LaTeX macro management
         Macros: {
           reals: ["\\mathbb{R}"],
     integers: ["\\mathbb{}"],
@@ -22,12 +39,13 @@
     set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2]
         }
       },
+    
       menuSettings: {
-        zoom: "Double-Click"
+        zoom: "Double-Click",
       },
     });
   </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
 
   <div id="main">

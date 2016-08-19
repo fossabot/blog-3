@@ -5,14 +5,31 @@
   <meta content="nanoc 4.2.4" name="generator">
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      // minimalistic: we only need TeX and the Mathjax menu is useful
+      extensions: ["tex2jax.js", "MathMenu.js"],
+    
+      // SVG is the fastest
+      jax: ["input/TeX", "output/SVG"],
+    
+      // we do not need delimiters as kramdown will transform a $$ XXX $$
+      // into span's or div's, the inner ones containing XXX,
+      // and with the appropriate id's and classes for an accompanying
+      // script to run Mathjax to render the content of those tags.
       tex2jax: {
-        inlineMath: [['$','$']],
-        displayMath: [['$$', '$$']],
+        inlineMath: [],
+        displayMath: [],
       },
+    
       TeX: {
+        // Minimalistic
+        extensions: ["AMSmath.js", "AMSsymbols.js"],
+    
+        // this is part of our handmade management of equation numbers
         equationNumbers: {
-          autoNumber: "all"
+          autoNumber: "AMS"
         },
+    
+        // this is part of our handmade LaTeX macro management
         Macros: {
           reals: ["\\mathbb{R}"],
     integers: ["\\mathbb{}"],
@@ -22,19 +39,20 @@
     set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2]
         }
       },
+    
       menuSettings: {
-        zoom: "Double-Click"
+        zoom: "Double-Click",
       },
     });
   </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
 
   <div id="main">
     
     <h1 id="une-prsentation-ludique-des-ingalits-de-bell">Une présentation ludique des inégalités de Bell</h1>
     
-    <p>Mon but est de présenter le problème en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour les vraies expérience de physique réalisée en laboratoire. La problématique est évidemment simplifiée mais je ne commet pas de mensonges effrontés! Commençons…</p>
+    <p>Mon but est de présenter le problème en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour les vraies expérience de physique réalisées en laboratoire. La problématique est évidemment simplifiée mais je ne commet pas de mensonges effrontés! Commençons…</p>
     
     <p>Je dispose de boites avec deux compartiments, un rouge et un bleu, dans
     chacun desquels je vais mettre un jeton, ou bien noir ou bien blanc. Les
@@ -149,7 +167,7 @@
     <p>Luc, très docte: «Mes chers amis, laisser moi maintenant vous enseigner
     la mécanique quantique …»</p>
     
-    <p>Évidemment, dans la réalité, les jetons et les boîtes se comporterait comme prédit par la mécanique classique et l’on observerait bien une fois sur deux en moyenne des jetons de même couleur sur le bleu de Jessica et le rouge de Paul. Mais ici je prétend que ce système simple se comporte en fait comme un système quantique, ce qui a pour conséquence de violer cette loi de probabilité, loi qui est l’équivalent des inégalités de Bell, même si dans mon histoire c’est une égalité! Je vous avais prévenu que l’analogie n’était pas parfaite … Les lecteurs intéressés par une présentation rigoureuse du sujet sont invité à lire <a href="../bell-inequalities">mon autre article de blog</a>.</p>
+    <p>Évidemment, dans la réalité, les jetons et les boîtes se comporteraient comme prédit par la mécanique classique et l’on observerait bien une fois sur deux en moyenne des jetons de même couleur sur le bleu de Jessica et le rouge de Paul. Mais ici je prétend que ce système simple se comporte en fait comme un système quantique, ce qui a pour conséquence de violer cette loi de probabilité, loi qui est l’équivalent des inégalités de Bell, même si dans mon histoire c’est une égalité! Je vous avais prévenu que l’analogie n’était pas parfaite … Les lecteurs intéressés par une présentation rigoureuse du sujet sont invités à lire <a href="../bell-inequalities">mon autre article de blog</a>.</p>
     
   </div>
   <div id="sidebar">
