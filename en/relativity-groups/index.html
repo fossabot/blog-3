@@ -40,7 +40,8 @@
     vec: ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2],
     mat: ["\\begin{bmatrix} #1 & {#2}^T \\\\ #3 & #4 \\end{bmatrix}", 4],
     Lie: ["\\text{Lie}(#1)", 1],
-    set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2]
+    set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2],
+    SO: ["\\text{SO}_{#1}", 1]
         }
       },
     
@@ -152,9 +153,9 @@
       <li>given the change of frame <script type="math/tex">(t,x) \mapsto (t',x')</script> followed by the change of frame <script type="math/tex">(t',x') \mapsto (t'',x'')</script>, we shall also have the change of frame <script type="math/tex">(t,x) \mapsto (t'',x'')</script>, and if <script type="math/tex">M</script> and <script type="math/tex">M'</script> are the matrix of the first and of the second respectively, then <script type="math/tex">MM'</script> is the matrix of the last.</li>
     </ol>
     
-    <p>The postulated Lie structure is as mundane, since every single non-discrete matrix group of practical which have found some use in physics is a Lie group. Instead of postulating the Lie structure, we could have postulated that <script type="math/tex">G</script> is topologically closed and then invoked Cartan’s theorem to conclude that <script type="math/tex">G</script> is a Lie subgroup of the Lie group of <script type="math/tex">4 \times 4</script> matrices. Whether requiring that any convergent sequence of matrices in <script type="math/tex">G</script> converges in <script type="math/tex">G</script>, for example, is more intuitive than requiring a Lie structure in the first place is a moot point for a theoretical physicist in the 21st century, in my humble opinion!</p>
+    <p>The postulated Lie structure is as mundane, since every single non-discrete matrix group of practical use in physics is a Lie group. Instead of postulating the Lie structure, we could have postulated that <script type="math/tex">G</script> is topologically closed and then invoked Cartan’s theorem to conclude that <script type="math/tex">G</script> is a Lie subgroup of the Lie group of <script type="math/tex">4 \times 4</script> matrices. Whether requiring that any convergent sequence of matrices in <script type="math/tex">G</script> converges in <script type="math/tex">G</script>, for example, is more intuitive than requiring a Lie structure in the first place is a moot point for a theoretical physicist in the 21st century, in my humble opinion!</p>
     
-    <h2 id="primer-on-lie-groups">Primer on Lie groups</h2>
+    <h2 id="primer-on-matrix-lie-groups">Primer on matrix Lie groups</h2>
     
     <p>We will succintly give here the essential properties we will use in our demonstration.</p>
     
@@ -170,14 +171,131 @@
     
     <p><em>Matrix Lie group</em>: it is a group <script type="math/tex">G</script> of matrices such that there exists a Lie algebra <script type="math/tex">H</script> such that <script type="math/tex">\exp H</script> is the connected component of the identity in <script type="math/tex">G</script>. We will denote <script type="math/tex">H</script> by <script type="math/tex">\Lie{G}</script>.</p>
     
-    <p>This may seem rather abstract but it is actually just a different, powerful, way to look at all the classic matrix groups.</p>
+    <p>There is an important property of the Lie algebra of a Lie group which will play an important role in our demonstrations:</p>
+    
+    <p><strong id="property-1">Property 1.</strong>
+     For any <script type="math/tex">A \in G</script>, and any <script type="math/tex">B \in \Lie{G}</script>, <script type="math/tex">A^{-1}BA \in \Lie{G}</script>.</p>
+    
+    <p><em>Proof.</em> This is a trivial consequence of the following property of matrix exponential,</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    A^{-1}\exp(B)A = \exp(A^{-1}BA),
+    \end{equation}</script>
+    
+    <p>since <script type="math/tex">(A^{-1}BA)^n = A^{-1}B^nA</script> for any integer <script type="math/tex">n</script>.</p>
+    
+    <p>Lie group of matrices may seem rather abstract but it is actually just a different, powerful, way to look at all the classic matrix groups. Let us study an example, which will be useful later: <script type="math/tex">3\times 3</script> orthogonal matrices, i.e. the matrices of the isometry of 3-dimensional space.</p>
+    
+    <p>We will demonstrate the very classic result</p>
+    
+    <p><strong id="theorem-1">Theorem 1.</strong>
+     The matrix exponential maps <script type="math/tex">3\times 3</script> antisymmetric matrices onto <script type="math/tex">3\times 3</script> rotation matrices.</p>
+    
+    <p><em>Proof.</em> Any antisymmetric matrix can be written</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    A = \theta L
+    \end{equation}</script>
+    
+    <p>and</p>
+    
+    <script type="math/tex; mode=display">% <![CDATA[
+    \begin{equation}
+    \newcommand{\rotgen}{
+        \begin{pmatrix} 0   & -u_3 &  u_2 \\
+                        u_3 &   0  & -u_1 \\
+                       -u_2 &  u_1 &   0
+        \end{pmatrix}
+    }
+    
+    L = \rotgen
+    \end{equation} %]]></script>
+    
+    <p>where</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    u = \begin{pmatrix} u_1 \\ u_2 \\ u_3 \end{pmatrix}
+    \end{equation}</script>
+    
+    <p>is a unit vector. Then <script type="math/tex">L</script> is the “matrix of the cross-product”, i.e. for any vector <script type="math/tex">x</script>,</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    Lx = u \times x. \label{Ldef}
+    \end{equation}</script>
+    
+    <p>As a result, using the well-known identity <script type="math/tex">a \times (b \times c) = (a.c)b - (a.b)c</script>, and the fact that <script type="math/tex">u^2=1</script>,</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    \notag
+    L^2 x = (u.x)u - x,
+    \end{equation}</script>
+    
+    <p>i.e.</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    L^2 = -\projperp{u}
+    \end{equation}</script>
+    
+    <p>where <script type="math/tex">\projperp{u}</script> is the orthogonal projection onto the plane <script type="math/tex">u^\perp</script> perpendicular to <script type="math/tex">u</script>. Therefore</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    L^{2n} = (-1)^n \projperp{u}.
+    \end{equation}</script>
+    
+    <p>On the other hand, since the image of <script type="math/tex">L</script> is <script type="math/tex">u^\perp</script> by (\ref{Ldef}), we have <script type="math/tex">\projperp{u} L = L</script> and therefore</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    L^{2n+1} = (-1)^n L.
+    \end{equation}</script>
+    
+    <p>Therefore,</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    \notag
+    \exp A = I + \sum_{i=1}^{+\infty} (-1)^n \frac{\theta}{2n!} \projperp{l}
+    + \sum_{i=0}^{+\infty} (-1)^n \frac{\theta}{(2n+1)!} L.
+    \end{equation}</script>
+    
+    <p>The trick which consists in breaking the exponential series into its odd and even terms will resurface when we will make Lorentz boosts appear. We have finally</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    \exp A = I + (\cos\theta -1 )\projperp{u} + (\sin\theta) L.
+    \end{equation}</script>
+    
+    <p>We recognize Rodrigues’ rotation formula in matrix form, i.e. <script type="math/tex">R=\exp A</script> is a rotation of angle <script type="math/tex">\theta</script> about <script type="math/tex">u</script>. This is easy to verify:</p>
+    
+    <ul>
+      <li>clearly, <script type="math/tex">Ru = u</script>;</li>
+      <li>then for any vector <script type="math/tex">x \in u^\perp</script>, <script type="math/tex">Rx = (\cos\theta) x + \sin\theta (u\times x)</script>. Thus given two vectors <script type="math/tex">v</script> and <script type="math/tex">w</script> such that <script type="math/tex">u,v,w</script> is an orthonormal basis, we have</li>
+    </ul>
+    
+    <script type="math/tex; mode=display">% <![CDATA[
+    \begin{align}
+    Rv &= (\cos\theta) v + (\sin\theta) w, \\
+    Rw &= -(\sin\theta) v + (\cos\theta) w,
+    \end{align} %]]></script>
+    
+    <p>which proves our claim. Since when <script type="math/tex">A</script> spans all antisymmetric matrices, <script type="math/tex">\theta</script> spans all of <script type="math/tex">\reals</script> and <script type="math/tex">u</script> spans all directions, we have therefore proven <a href="#theorem-1">Theorem 1</a>.</p>
+    
+    <p>We can conclude with a result which will prove important in our demonstrations.</p>
+    
+    <p><strong id="corollary-1">Corollary 1.</strong>
+     The group <script type="math/tex">O</script> introduced in <a href="#postulate-2">Postulate 2</a> is a Lie group and <script type="math/tex">\Lie{O}</script> consists of the matrices of the form</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    \mat{0}{0}{0}{A}
+    \end{equation}</script>
+    
+    <p>where <script type="math/tex">A</script> is antisymmetric.</p>
+    
+    <p><em>Proof.</em> With <a href="#theorem-1">Theorem 1</a>, it is trivial that the matrix exponential maps those matrices onto the rotations in <script type="math/tex">O</script>. Since the subgroup of rotations in <script type="math/tex">O</script> is the connected component of the identity, this proves the result with the operational definition of a Lie group we have chosen.</p>
     
     <h2 id="derivation-of-the-group-g-of-viable-transforms">Derivation of the group <script type="math/tex">G</script> of viable transforms</h2>
     
     <p>Our strategy will be to characterise <script type="math/tex">\Lie{G}</script> and then use the matrix exponential to find <script type="math/tex">G</script>. We start by demonstrating a simple lemma we will reuse a couple of time.</p>
     
     <p><strong id="lemma-1">Lemma 1.</strong>
-     If <script type="math/tex">\mathcal{A} = \mat{a}{0}{0}{M} \in \Lie{G}</script>, then <script type="math/tex">a=0</script> and <script type="math/tex">M</script> is antisymmetric, i.e. <script type="math/tex">\mathcal{A} \in \Lie{O}</script>.</p>
+     If <script type="math/tex">A = \mat{a}{0}{0}{M} \in \Lie{G}</script>, then <script type="math/tex">a=0</script> and <script type="math/tex">M</script> is antisymmetric, i.e. <script type="math/tex">A \in \Lie{O}</script>.</p>
     
     <p><em>Proof.</em> With</p>
     
@@ -185,8 +303,8 @@
     \begin{equation}
     \notag
     \begin{aligned}
-    A&=\frac{M+M^T}{2},\\
-    B&=\frac{M-M^T}{2},
+    M^+&=\frac{M+M^T}{2},\\
+    M^-&=\frac{M-M^T}{2},
     \end{aligned}
     \end{equation} %]]></script>
     
@@ -194,17 +312,17 @@
     
     <script type="math/tex; mode=display">\begin{equation}
     \notag
-    \mathcal{A} = \mat{0}{0}{0}{A} + \mat{a}{0}{0}{B}.
+    A = \mat{0}{0}{0}{M^-} + \mat{a}{0}{0}{M^+}.
     \end{equation}</script>
     
-    <p>On the right-hand side, the first term belongs to <script type="math/tex">\Lie{O}</script> and therefore the second term <script type="math/tex">\mathcal{B}</script> belongs to <script type="math/tex">\Lie{G}</script>. But then</p>
+    <p>On the right-hand side, the first term belongs to <script type="math/tex">\Lie{O}</script> and therefore the second term <script type="math/tex">B</script> belongs to <script type="math/tex">\Lie{G}</script>. But then</p>
     
     <script type="math/tex; mode=display">\begin{equation}
     \notag
-    \exp \mathcal{B} = \mat{\exp a}{0}{0}{\exp B}.
+    \exp B = \mat{\exp a}{0}{0}{\exp M^+}.
     \end{equation}</script>
     
-    <p><a href="#postulate-3">Postulate 3</a> requires that <script type="math/tex">\exp \mathcal{B}</script> is a spatial isometry, and therefore that <script type="math/tex">a=0</script> and <script type="math/tex">(\exp B)(\exp B)^T = I</script>. Since <script type="math/tex">B</script> is symmetric, this means <script type="math/tex">\exp 2B = I</script>, and therefore that <script type="math/tex">B=0</script>. This completes the proof.</p>
+    <p><a href="#postulate-3">Postulate 3</a> requires that <script type="math/tex">\exp B</script> is a spatial isometry, and therefore that <script type="math/tex">a=0</script> and <script type="math/tex">(\exp M^+)(\exp M^+)^T = I</script>. Since <script type="math/tex">M^+</script> is symmetric, this means <script type="math/tex">\exp 2M^+ = I</script>, and therefore that <script type="math/tex">M^+=0</script>. This completes the proof.</p>
     
     <p>Then we move to the keystone of our demonstration, as the subsequent work will simply be the computation of matrix exponentials.</p>
     
@@ -351,6 +469,8 @@
     A=\LorGen{w}.
     \end{equation}</script>
     
+    <p>The scalar <script type="math/tex">c</script> has the dimension of a speed and we see that it appeared solely because rotations are a subgroup of the group of transforms we seek, and because we have a Lie group (since we used the fact that <script type="math/tex">[A,B]</script> is in the Lie algebra).</p>
+    
     <p>Then for any rotation</p>
     
     <script type="math/tex; mode=display">\begin{equation}
@@ -423,7 +543,7 @@
     
     <p>We can now prove the following theorem.</p>
     
-    <p><strong id="theorem-1">Theorem 1.</strong>
+    <p><strong id="theorem-2">Theorem 2.</strong>
      A group <script type="math/tex">G</script> of transforms satisfying postulate 1–3 is one of the following group:</p>
     
     <ul>
@@ -433,7 +553,7 @@
       <li>the group of rotations in spacetime (III<sup>-</sup>)</li>
     </ul>
     
-    <p><em>Proof</em> Those four cases obviously correspond to the four cases of <a href="#lemma-2">lemma 2</a>. Thus let us review them in turn.</p>
+    <p><em>Proof.</em> Those four cases obviously correspond to the four cases of <a href="#lemma-2">lemma 2</a>. Thus let us review them in turn.</p>
     
     <p><em>Case I and II</em>: it is trivial to verify that any <script type="math/tex">K \in K_G</script> is such that <script type="math/tex">K^2 = 0</script> and therefore <script type="math/tex">K^n = 0</script> for any integer <script type="math/tex">n \ge 2</script>. As a result, the exponential series is trivial: <script type="math/tex">\exp K = I + K</script>. Thus in case I, this gives</p>
     
@@ -562,7 +682,7 @@
     
     <p>We can now conclude with</p>
     
-    <p><strong id="theorem-2">Theorem 2.</strong>
+    <p><strong id="theorem-3">Theorem 3.</strong>
      The only groups <script type="math/tex">G</script> of transforms satisfying postulates 1–4 are Galilean group and Lorentz group.</p>
     <h2>Bibliography</h2>
     <div class="bibliography_entry" id="Einstein:1905">
@@ -606,14 +726,36 @@
       47:1045,
       1979
     </div>
+    <div id="license">
+      <div>
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+          <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+        </a>
+      </div>
+      <div>
+        This work is licensed under a
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+          Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+          International License.
+        </a>
+      </div>
+    </div>
   </div>
   <div id="sidebar">
-    <a href="../../fr/">
-      <img src="../../fr/icon.png">
-    </a>
-    <a href="../">
-      <img src="../icon.png">
-    </a>
+    <div class="flags">
+      <span>
+        <a href="../../fr/">
+          <img src="../../fr/icon.png">
+          <span>Sommaire</span>
+        </a>
+      </span>
+      <span class="right">
+        <a href="../">
+          <img src="../icon.png">
+          <span>Home</span>
+        </a>
+      </span>
+    </div>
     <div class="whoami">I am Luc J. Bourhis, physicist and software developer in Paris, France. This is my personal blog dedicated to my scientific and computing hobbies.</div>
     <div class="topics">computing</div>
     <ul class="title-list">

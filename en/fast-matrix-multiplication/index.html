@@ -36,7 +36,8 @@
     vec: ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2],
     mat: ["\\begin{bmatrix} #1 & {#2}^T \\\\ #3 & #4 \\end{bmatrix}", 4],
     Lie: ["\\text{Lie}(#1)", 1],
-    set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2]
+    set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2],
+    SO: ["\\text{SO}_{#1}", 1]
         }
       },
     
@@ -151,14 +152,36 @@
       </ol>
     </div>
     
+    <div id="license">
+      <div>
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+          <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+        </a>
+      </div>
+      <div>
+        This work is licensed under a
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">
+          Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+          International License.
+        </a>
+      </div>
+    </div>
   </div>
   <div id="sidebar">
-    <a href="../../fr/">
-      <img src="../../fr/icon.png">
-    </a>
-    <a href="../">
-      <img src="../icon.png">
-    </a>
+    <div class="flags">
+      <span>
+        <a href="../../fr/">
+          <img src="../../fr/icon.png">
+          <span>Sommaire</span>
+        </a>
+      </span>
+      <span class="right">
+        <a href="../">
+          <img src="../icon.png">
+          <span>Home</span>
+        </a>
+      </span>
+    </div>
     <div class="whoami">I am Luc J. Bourhis, physicist and software developer in Paris, France. This is my personal blog dedicated to my scientific and computing hobbies.</div>
     <div class="topics">computing</div>
     <ul class="title-list">

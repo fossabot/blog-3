@@ -4,22 +4,16 @@ abbr {
 * {
   margin: 0;
   padding: 0;
-  font-family: Palatino, serif; }
+  font-family: Georgia, Palatino, serif; }
 
 body {
   background: #fff; }
 
-a {
+a, span.MathJax_ref {
+  color: #0645ad;
   text-decoration: none; }
-
-a:link,
-a:visited,
-span.MathJax_ref {
-  color: #000080; }
-
-a:hover,
-span:hover.MathJax_ref {
-  color: #008080; }
+  a:hover, span.MathJax_ref:hover {
+    text-decoration: underline; }
 
 .bibliography_entry {
   font-size: 17px;
@@ -31,52 +25,42 @@ sup {
 
 #main {
   position: absolute;
-  top: 40px;
   left: 241px;
+  padding-top: 40px;
   padding-left: 20px;
   padding-right: 40px; }
-
-#main h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 20px;
-  letter-spacing: -1px; }
-
-#main h1 {
-  font-size: 40px; }
-
-#main h2 {
-  font-size: 28px; }
-
-#main h3 {
-  font-size: 20px; }
-
-#main p, #main ul, #main ol {
-  text-align: justify;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto; }
-
-#main p {
-  margin: 20px 0;
-  font-size: 17px;
-  line-height: 20px; }
-
-#main .MathJax a {
-  font-family: Palatino, serif;
-  font-size: 17px;
-  line-height: 20px; }
-
-#main ul, #main ol {
-  margin: 20px; }
-
-#main li {
-  font-size: 17px;
-  line-height: 20px; }
-
-#main ul li {
-  list-style-type: square; }
+  #main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: -1px; }
+  #main h1 {
+    font-size: 40px; }
+  #main h2 {
+    font-size: 28px; }
+  #main h3 {
+    font-size: 20px; }
+  #main p, #main ul, #main ol {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
+  #main p {
+    margin: 20px 0;
+    font-size: 17px;
+    line-height: 20px; }
+  #main .MathJax a {
+    font-family: Georgia, Palatino, serif;
+    font-size: 17px;
+    line-height: 20px; }
+  #main ul, #main ol {
+    margin: 20px; }
+  #main li {
+    font-size: 17px;
+    line-height: 20px; }
+  #main ul li {
+    list-style-type: square; }
 
 #sidebar {
   position: absolute;
@@ -84,28 +68,41 @@ sup {
   padding: 20px;
   border-right: 1px solid #ccc;
   text-align: right; }
+  #sidebar .flags {
+    text-align: justify;
+    margin-bottom: 1.2em; }
+    #sidebar .flags img, #sidebar .flags span {
+      vertical-align: middle; }
+    #sidebar .flags .right {
+      float: right; }
+  #sidebar .topics {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #333;
+    letter-spacing: 1px; }
+  #sidebar .title-list {
+    list-style-type: none;
+    margin-top: 0.5em;
+    margin-right: 0;
+    margin-bottom: 1.2em; }
+  #sidebar .title {
+    font-size: 15px;
+    line-height: 20px; }
+  #sidebar .whoami {
+    font-size: 14px;
+    margin-bottom: 2em;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
 
-#sidebar .topics {
-  text-transform: uppercase;
-  font-size: 13px;
-  color: #333;
-  letter-spacing: 1px; }
-
-#sidebar .title-list {
-  list-style-type: none;
-  margin-top: 0.5em;
-  margin-right: 0;
-  margin-bottom: 1.2em; }
-
-#sidebar .title {
-  font-size: 15px;
-  line-height: 20px; }
-
-#sidebar .whoami {
-  font-size: 14px;
-  margin-bottom: 30px;
-  text-align: justify;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto; }
+#license {
+  margin-top: 2em;
+  margin-bottom: 1em; }
+  #license img {
+    border-width: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em; }

@@ -36,7 +36,8 @@
     vec: ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2],
     mat: ["\\begin{bmatrix} #1 & {#2}^T \\\\ #3 & #4 \\end{bmatrix}", 4],
     Lie: ["\\text{Lie}(#1)", 1],
-    set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2]
+    set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2],
+    SO: ["\\text{SO}_{#1}", 1]
         }
       },
     
@@ -290,14 +291,35 @@
       81:5039--5043,
       1998
     </div>
+    <div id="license">
+      <div>
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" rel="license">
+          <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+        </a>
+      </div>
+      <div>
+        Cette œuvre est mise à disposition selon les termes de la
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" rel="license">
+          Licence Internationale "Creative Commons Attribution" 4.0 - Pas d’utilisation commerciale - Partage dans les mêmes conditions.
+        </a>
+      </div>
+    </div>
   </div>
   <div id="sidebar">
-    <a href="../">
-      <img src="../icon.png">
-    </a>
-    <a href="../../en/">
-      <img src="../../en/icon.png">
-    </a>
+    <div class="flags">
+      <span>
+        <a href="../">
+          <img src="../icon.png">
+          <span>Sommaire</span>
+        </a>
+      </span>
+      <span class="right">
+        <a href="../../en/">
+          <img src="../../en/icon.png">
+          <span>Home</span>
+        </a>
+      </span>
+    </div>
     <div class="whoami">Je suis Luc Bourhis, physicien et développeur de logiciel à Paris, France. Ceci est un blog personnel dédié à mes marottes informatiques et scientifiques.</div>
     <div class="topics">physique</div>
     <ul class="title-list">
