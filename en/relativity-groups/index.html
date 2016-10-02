@@ -275,14 +275,28 @@
     A = \mat{0}{0}{0}{M^-} + \mat{a}{0}{0}{M^+}.
     \end{equation}</script>
     
-    <p>On the right-hand side, the first term belongs to <script type="math/tex">\Lie{O}</script>, as <script type="math/tex">M^-</script> is antisymmetric, and therefore the second term <script type="math/tex">B</script> belongs to <script type="math/tex">\Lie{G}</script> too. But then</p>
+    <p>On the right-hand side, the first term belongs to <script type="math/tex">\Lie{O}</script>, as <script type="math/tex">M^-</script> is antisymmetric, and therefore the second term <script type="math/tex">B</script> belongs to <script type="math/tex">\Lie{G}</script> too. Since <script type="math/tex">M^+</script> is symmetric, there is an invertible matrix <script type="math/tex">P</script> and a diagonal matrix <script type="math/tex">\Delta</script> such that <script type="math/tex">P^{-1}M^+P = \Delta</script>. But then with</p>
     
     <script type="math/tex; mode=display">\begin{equation}
     \notag
-    \exp B = \mat{\exp a}{0}{0}{\exp M^+}.
+    Q = \mat{1}{0}{0}{P}
     \end{equation}</script>
     
-    <p><a href="#postulate-3">Postulate 3</a> requires that <script type="math/tex">\exp B</script> is a spatial isometry, and therefore that <script type="math/tex">a=0</script> and <script type="math/tex">(\exp M^+)(\exp M^+)^T = I</script>. Since <script type="math/tex">M^+</script> is symmetric, this means <script type="math/tex">\exp 2M^+ = I</script>, and therefore that <script type="math/tex">M^+=0</script>. This completes the proof.</p>
+    <p>we have</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    \notag
+    B' = Q^{-1} B Q = \mat{a}{0}{0}{\Delta}.
+    \end{equation}</script>
+    
+    <p>With <a href="#property-1">Property 1</a>, <script type="math/tex">B'</script> is in <script type="math/tex">\Lie{G}</script>, and therefore</p>
+    
+    <script type="math/tex; mode=display">\begin{equation}
+    \notag
+    \exp B' = \mat{\exp a}{0}{0}{\exp \Delta}.
+    \end{equation}</script>
+    
+    <p>is in <script type="math/tex">G</script>. But this is a change of scale, and therefore <a href="#postulate-3">Postulate 3</a> requires that <script type="math/tex">a=0</script> and <script type="math/tex">\Delta=0</script>. This completes the proof.</p>
     
     <p>Then we move to the keystone of our demonstration, as the subsequent work will simply be the computation of matrix exponentials.</p>
     
@@ -391,7 +405,7 @@
     
     <p><em>Case 3:</em> <script type="math/tex">\KLG</script> has an element <script type="math/tex">A=\mat{0}{u}{v}{0}</script> with <script type="math/tex">u \ne 0</script> and <script type="math/tex">v \ne 0</script>.</p>
     
-    <p>Let <script type="math/tex">_0</script> be the rotation of angle <script type="math/tex">\pi</script> around the bissector of <script type="math/tex">(u,v)</script>. Then it exists <script type="math/tex">\kappa > 0</script> such that <script type="math/tex">R_0 v = \kappa u</script> and <script type="math/tex">R_0 u = \frac{1}{\kappa} v</script>. Then, with</p>
+    <p>Let <script type="math/tex">R_0</script> be the rotation of angle <script type="math/tex">\pi</script> around the bissector of <script type="math/tex">(u,v)</script>. Then it exists <script type="math/tex">\kappa > 0</script> such that <script type="math/tex">R_0 v = \kappa u</script> and <script type="math/tex">R_0 u = \frac{1}{\kappa} v</script>. Then, with</p>
     
     <script type="math/tex; mode=display">\begin{equation}
     \notag
