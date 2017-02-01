@@ -71,7 +71,7 @@ body {
   font-family: Palatino, serif; }
   @media only screen and (max-device-width: 1024px) {
     body #main {
-      font-size: 500%; }
+      font-size: 150%; }
     body #sidebar {
       font-size: 120%; } }
 
@@ -109,7 +109,7 @@ sup {
   font-family: Palatino, serif; }
   @media only screen and (max-device-width: 1024px) {
     #main .MathJax a #main {
-      font-size: 500%; }
+      font-size: 150%; }
     #main .MathJax a #sidebar {
       font-size: 120%; } }
 
