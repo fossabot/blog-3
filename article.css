@@ -16,7 +16,7 @@
    * Do not forget to add those Google web fonts to config file `nanoc.yaml`
    */
   font-family: "PT Serif", serif;
-  font-size: 1.4375em;
+  font-size: 1.375em;
   /*
    * Fonts installed on this site
    */
@@ -25,7 +25,7 @@
    */ }
   @media (min-device-width: 120em) {
     :root {
-      font-size: 1.125em; } }
+      font-size: 1.0625em; } }
 
 body {
   margin: 0; }
