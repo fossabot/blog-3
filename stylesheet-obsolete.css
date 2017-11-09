@@ -89,16 +89,26 @@ sup {
 
 #main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
   font-weight: normal; }
-#main h1 {
-  text-align: center;
-  font-size: 2.0581em;
-  margin-bottom: 2.059em; }
-#main h2 {
-  margin-top: 1em;
-  font-size: 1.618em; }
+#main h5, #main h6 {
+  font-size: 1.2rem; }
+#main h6 {
+  font-style: italic; }
+#main h4 {
+  font-size: 1.44rem; }
 #main h3 {
-  margin-top: 0.786em;
-  font-size: 1.272em; }
+  font-size: 1.728rem; }
+#main h2 {
+  font-size: 2.0736rem; }
+#main h1 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 2.48832rem; }
+#main p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+#main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
+  margin-top: 0.575em;
+  margin-bottom: 0.5em; }
 #main p, #main ul, #main ol {
   text-align: justify;
   -webkit-hyphens: auto;

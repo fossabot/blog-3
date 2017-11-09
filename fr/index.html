@@ -3,17 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Luc J. Bourhis Musings - Home</title>
-<link href="../stylesheet.css" rel="stylesheet">
-<meta content="nanoc 4.7.10" name="generator">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Luc J. Bourhis Musings - </title>
+<link href="../abstracts.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i%7CRoboto:400,700,400i,700i" rel="stylesheet">
+<meta content="nanoc 4.8.11" name="generator">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
-  // minimalistic: we only need TeX and the Mathjax menu is useful
-  extensions: ["tex2jax.js", "MathMenu.js"],
-
-  // SVG is the fastest
-  jax: ["input/TeX", "output/SVG"],
-
   // we do not need delimiters as kramdown will transform a $$ XXX $$
   // into span's or div's, the inner ones containing XXX,
   // and with the appropriate id's and classes for an accompanying
@@ -24,9 +20,6 @@ MathJax.Hub.Config({
   },
 
   TeX: {
-    // Minimalistic
-    extensions: ["AMSmath.js", "AMSsymbols.js"],
-
     // this is part of our handmade management of equation numbers
     equationNumbers: {
       autoNumber: "AMS"
@@ -36,11 +29,13 @@ MathJax.Hub.Config({
     Macros: {
       reals: ["\\mathbb{R}"],
 integers: ["\\mathbb{}"],
-vec: ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2],
-mat: ["\\begin{bmatrix} #1 & {#2}^T \\\\ #3 & #4 \\end{bmatrix}", 4],
-Lie: ["\\text{Lie}(#1)", 1],
 set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2],
-SO: ["\\text{SO}_{#1}", 1]
+ket: ["\\left| #1 \\right\\rangle", 1],
+bra: ["\\left\\langle #1 \\right|", 1],
+braket: ["\\left\\langle #1 | #2 \\right\\rangle", 2],
+expect: ["\\left\\langle #1 \\right\\rangle", 1],
+comm: ["\\left[ #1, #2 \\right]", 2],
+matnorm: ["\\Vert #1 \\Vert", 1]
     }
   },
 
@@ -48,52 +43,50 @@ SO: ["\\text{SO}_{#1}", 1]
     zoom: "Double-Click",
   },
 });
+// MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+//   var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+//   VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+//   VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+//   VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+//   VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+// });
 
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_SVG"></script>
 
+<script src="https://use.fontawesome.com/0e6d8b9bc7.js"></script>
 </head>
 <body>
-<div>
 <div id="main">
-
-<h1 id="ides-aux-quatre-vents">Idées aux quatre vents</h1>
-
-<h2 id="physique">Physique</h2>
-
-<h3 id="ingalits-de-bell">Inégalités de Bell</h3>
-
-<p>Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot “classique” est par opposition à “quantique”. Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, on peut démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l’honneur du chercheur qui en a démontré l’existence. De nombreuses expériences différentes ont été réalisées (je donnerais les références de certaines d’entre elles) et leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme.</p>
-
-<p>Ce type de présentation informelle résulte trop souvent en des contre-sens et par conséquent, je me propose de démontrer mathématiquement une inégalité de Bell pour un protocole expérimental bien précis en mettant clairement et précisément en lumière les hypothèses utilisées. J’espère ainsi rendre limpide ce qui est réellement infirmé par une violation de ces inégalités. Par contraposée, cela met en lumière ce qui est spécifique à la mécanique quantique (il va sans dire que les résultats des expériences sus-citées sont en agrément avec les prédictions de la mécanique quantique). <a href="bell-inequalities">Lire la suite</a></p>
-
-<p>À l’autre bout du spectre de l’écriture, voici une présentation ludique sous la forme d’un dialogue et sans mathématique. L’analogie développée est loin d’être parfaite mais je pense qu’elle donne les bonnes idées en ne sacrifiant que sur des détails non conceptuels. <a href="bell-inequalities-no-math">Lire la suite</a></p>
-
+<h1>
+Idées aux quatre vents
+</h1>
+<div class="author">
+Luc J. Bourhis
 </div>
-<div id="sidebar">
-<div class="flags">
-<span>
-<a href="./">
-<img src="icon.png">
-<span>Sommaire</span>
+<h2 class="categories">physique</h2>
+<a href="bell-inequalities/">
+<h3>Étude d'une Inégalité de Bell</h3>
 </a>
-</span>
-<span class="right">
-<a href="../en/">
-<img src="../en/icon.png">
-<span>Home</span>
+<div>
+
+<p>Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, on peut démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui en a démontré l'existence. De nombreuses expériences différentes ont été réalisées (je donnerais les références de certaines d'entre elles) et leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme.</p>
+
+<p>Ce type de présentation informelle résulte trop souvent en des contre-sens et par conséquent, je me propose de démontrer mathématiquement une inégalité de Bell pour un protocole expérimental bien précis en mettant clairement et précisément en lumière les hypothèses utilisées. J'espère ainsi rendre limpide ce qui est réellement infirmé par une violation de ces inégalités. Par contraposée, cela met en lumière ce qui est spécifique à la mécanique quantique (il va sans dire que les résultats des expériences sus-citées sont en agrément avec les prédictions de la mécanique quantique).</p>
+
+
+</div>
+<a href="bell-inequalities-no-math/">
+<h3>Une présentation ludique des inégalités de Bell</h3>
 </a>
-</span>
-</div>
-<div class="whoami">Je suis Luc Bourhis, physicien et développeur de logiciel à Paris, France. Ceci est un blog personnel dédié à mes marottes informatiques et scientifiques.
-</div>
-<div class="topics">physique</div>
-<ul class="title-list">
-<li class="title"><a href="bell-inequalities/">Une Inégalité de Bell</a></li>
-<li class="title"><a href="bell-inequalities-no-math/">Inégalités de Bell sans math</a></li>
-</ul>
+<div>
+
+<p>Mon but est de présenter le problème sous la forme d'un dialogue, sans mathématique, en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour les vraies expérience de physique réalisées en laboratoire. L'analogie développée est loin d'être parfaite mais je pense qu'elle donne les bonnes idées en ne sacrifiant que sur des détails non conceptuels.</p>
+
+
 </div>
 </div>
+
 </body>
 </html>

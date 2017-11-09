@@ -3,17 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Luc J. Bourhis Musings - Home</title>
-<link href="../stylesheet.css" rel="stylesheet">
-<meta content="nanoc 4.7.10" name="generator">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Luc J. Bourhis Musings - </title>
+<link href="../abstracts.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i%7CRoboto:400,700,400i,700i" rel="stylesheet">
+<meta content="nanoc 4.8.11" name="generator">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
-  // minimalistic: we only need TeX and the Mathjax menu is useful
-  extensions: ["tex2jax.js", "MathMenu.js"],
-
-  // SVG is the fastest
-  jax: ["input/TeX", "output/SVG"],
-
   // we do not need delimiters as kramdown will transform a $$ XXX $$
   // into span's or div's, the inner ones containing XXX,
   // and with the appropriate id's and classes for an accompanying
@@ -24,9 +20,6 @@ MathJax.Hub.Config({
   },
 
   TeX: {
-    // Minimalistic
-    extensions: ["AMSmath.js", "AMSsymbols.js"],
-
     // this is part of our handmade management of equation numbers
     equationNumbers: {
       autoNumber: "AMS"
@@ -36,11 +29,13 @@ MathJax.Hub.Config({
     Macros: {
       reals: ["\\mathbb{R}"],
 integers: ["\\mathbb{}"],
-vec: ["\\begin{bmatrix} #1 \\\\ #2 \\end{bmatrix}", 2],
-mat: ["\\begin{bmatrix} #1 & {#2}^T \\\\ #3 & #4 \\end{bmatrix}", 4],
-Lie: ["\\text{Lie}(#1)", 1],
 set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2],
-SO: ["\\text{SO}_{#1}", 1]
+ket: ["\\left| #1 \\right\\rangle", 1],
+bra: ["\\left\\langle #1 \\right|", 1],
+braket: ["\\left\\langle #1 | #2 \\right\\rangle", 2],
+expect: ["\\left\\langle #1 \\right\\rangle", 1],
+comm: ["\\left[ #1, #2 \\right]", 2],
+matnorm: ["\\Vert #1 \\Vert", 1]
     }
   },
 
@@ -48,61 +43,49 @@ SO: ["\\text{SO}_{#1}", 1]
     zoom: "Double-Click",
   },
 });
+// MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+//   var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+//   VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+//   VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+//   VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+//   VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+// });
 
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_SVG"></script>
 
+<script src="https://use.fontawesome.com/0e6d8b9bc7.js"></script>
 </head>
 <body>
-<div>
 <div id="main">
-
-<h1 id="cartesian-musings">Cartesian Musings</h1>
-
-<h2 id="computing">Computing</h2>
-
-<h3 id="matrix-multiplication-at-peak-performance">Matrix multiplication at peak performance</h3>
+<h1>
+Cartesian Musings
+</h1>
+<div class="author">
+Luc J. Bourhis
+</div>
+<h2 class="categories">computing</h2>
+<a href="fast-matrix-multiplication/">
+<h3>Matrix Multiplication at Peak Performance</h3>
+</a>
+<div>
 
 <p>High performance matrix multiplication is the workhorse which makes possible the whole field of high performance linear algebra. In this article, we succinctly motivate the importance of that field, and explain in simple terms why it must rely so much on fast matrix multiplication. Then we explore how to implement the latter with more technical details.</p>
 
-<p><a href="fast-matrix-multiplication">Read more</a></p>
 
-<h2 id="physics">Physics</h2>
-
-<h3 id="change-of-inertial-frames-what-transforms-are-possible">Change of inertial frames: what transforms are possible?</h3>
+</div>
+<h2 class="categories">physics</h2>
+<a href="relativity-groups/">
+<h3>Change of inertial frames: what transforms are possible?</h3>
+</a>
+<div>
 
 <p>We discuss how to prove that Galilean and Lorentz transforms are the only possibilities besides rotations using only very general postulates about changes of inertial frames. Most interestingly, we do not make any of the traditional assumptions, about the speed of light for Lorentz transforms, and about the universality of time and length for Galilean transforms.</p>
 
-<p><a href="relativity-groups">Read more</a></p>
 
 </div>
-<div id="sidebar">
-<div class="flags">
-<span>
-<a href="../fr/">
-<img src="../fr/icon.png">
-<span>Sommaire</span>
-</a>
-</span>
-<span class="right">
-<a href="./">
-<img src="icon.png">
-<span>Home</span>
-</a>
-</span>
 </div>
-<div class="whoami">I am Luc J. Bourhis, physicist and software developer in Paris, France. This is my personal blog dedicated to my scientific and computing hobbies.
-</div>
-<div class="topics">computing</div>
-<ul class="title-list">
-<li class="title"><a href="fast-matrix-multiplication/">Fast Matrix Multiplication</a></li>
-</ul>
-<div class="topics">physics</div>
-<ul class="title-list">
-<li class="title"><a href="relativity-groups/">Viable Changes of Inertial Frames</a></li>
-</ul>
-</div>
-</div>
+
 </body>
 </html>

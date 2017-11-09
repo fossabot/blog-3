@@ -1,0 +1,58 @@
+/**
+ * Universal border-box fix
+ * Listing 3.6 of Keith J. Grant "CSS in Depth",
+ * referred to as [CSSD] in the following
+ */
+:root {
+  box-sizing: border-box; }
+
+*,
+::before,
+::after {
+  box-sizing: inherit; }
+
+:root {
+  /*
+   * Do not forget to add those Google web fonts to config file `nanoc.yaml`
+   */
+  font-family: "PT Serif", serif;
+  font-size: 1.4375em;
+  /*
+   * Fonts installed on this site
+   */
+  /*
+   * Those are available on MacOS and iOS
+   */ }
+  @media (min-device-width: 120em) {
+    :root {
+      font-size: 1.125em; } }
+
+body {
+  margin: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif; }
+
+#main {
+  padding: 1em;
+  padding-top: 0; }
+  #main p {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
+  #main ul, #main ol {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
+  #main h1 {
+    text-align: center; }
+  #main .author {
+    text-align: center;
+    font-style: italic; }
+
+.categories {
+  text-transform: uppercase; }
