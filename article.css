@@ -54,8 +54,19 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     font-style: italic; }
 
+a.flags img {
+  vertical-align: text-bottom;
+  margin-left: 0.1em; }
+
+a.flags {
+  text-decoration: none; }
+
+#main #body {
+  margin-top: 2em; }
 #main .bibliography_entry {
   margin-bottom: 0.5em; }
+#main .bibliography_key {
+  font-weight: bold; }
 #main #license {
   margin-top: 2em;
   margin-bottom: 1em; }
@@ -78,15 +89,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .topics {
   display: none;
-  margin-top: 0.5em;
-  margin-bottom: 1em; }
-
-a.flags img {
-  vertical-align: text-bottom;
-  margin-left: 0.1em; }
-
-a.flags {
-  text-decoration: none; }
+  margin-top: 1em;
+  margin-bottom: 2em; }
 
 .topic_categories {
   text-transform: uppercase;

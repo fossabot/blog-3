@@ -32,7 +32,7 @@ integers: ["\\mathbb{}"],
 set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2],
 ket: ["\\left| #1 \\right\\rangle", 1],
 bra: ["\\left\\langle #1 \\right|", 1],
-braket: ["\\left\\langle #1 | #2 \\right\\rangle", 2],
+braket: ["\\left\\langle #1 \\vphantom{#2}\\right|\\left.\\vphantom{#1} #2 \\right\\rangle", 2],
 expect: ["\\left\\langle #1 \\right\\rangle", 1],
 comm: ["\\left[ #1, #2 \\right]", 2],
 matnorm: ["\\Vert #1 \\Vert", 1]
@@ -58,6 +58,14 @@ matnorm: ["\\Vert #1 \\Vert", 1]
 <script src="https://use.fontawesome.com/0e6d8b9bc7.js"></script>
 </head>
 <body>
+<nav id="home_lang_nav">
+<a class="flags" href="../en">
+<img src="../en/icon.png">
+</a>
+<a class="flags" href=".">
+<img src="icon.png">
+</a>
+</nav>
 <div id="main">
 <h1>
 Idées aux quatre vents
@@ -71,9 +79,7 @@ Luc J. Bourhis
 </a>
 <div>
 
-<p>Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, on peut démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui en a démontré l'existence. De nombreuses expériences différentes ont été réalisées (je donnerais les références de certaines d'entre elles) et leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme.</p>
-
-<p>Ce type de présentation informelle résulte trop souvent en des contre-sens et par conséquent, je me propose de démontrer mathématiquement une inégalité de Bell pour un protocole expérimental bien précis en mettant clairement et précisément en lumière les hypothèses utilisées. J'espère ainsi rendre limpide ce qui est réellement infirmé par une violation de ces inégalités. Par contraposée, cela met en lumière ce qui est spécifique à la mécanique quantique (il va sans dire que les résultats des expériences sus-citées sont en agrément avec les prédictions de la mécanique quantique).</p>
+<p>Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est ici entendu par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, je vais démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui démontra la première d'entre elles. De nombreuses expériences différentes ont été réalisées, dont je donnerais un aperçu, menant à une double conclusion: d'une part, leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme; d'autre part, ils sont en accord avec les prédictions de la mécanique quantique.</p>
 
 
 </div>

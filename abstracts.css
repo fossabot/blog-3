@@ -54,5 +54,17 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     font-style: italic; }
 
+a.flags img {
+  vertical-align: text-bottom;
+  margin-left: 0.1em; }
+
+a.flags {
+  text-decoration: none; }
+
 .categories {
   text-transform: uppercase; }
+
+#home_lang_nav {
+  position: absolute;
+  left: 15px;
+  top: 15px; }

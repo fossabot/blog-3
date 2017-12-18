@@ -32,7 +32,7 @@ integers: ["\\mathbb{}"],
 set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2],
 ket: ["\\left| #1 \\right\\rangle", 1],
 bra: ["\\left\\langle #1 \\right|", 1],
-braket: ["\\left\\langle #1 | #2 \\right\\rangle", 2],
+braket: ["\\left\\langle #1 \\vphantom{#2}\\right|\\left.\\vphantom{#1} #2 \\right\\rangle", 2],
 expect: ["\\left\\langle #1 \\right\\rangle", 1],
 comm: ["\\left[ #1, #2 \\right]", 2],
 matnorm: ["\\Vert #1 \\Vert", 1]
@@ -106,6 +106,9 @@ Matrix Multiplication at Peak Performance
 <div class="author">
 Luc J. Bourhis
 </div>
+<div id="body">
+
+<p>High performance matrix multiplication is the workhorse which makes possible the whole field of high performance linear algebra. In this article, we succinctly motivate the importance of that field, and explain in simple terms why it must rely so much on fast matrix multiplication. Then we explore how to implement the latter with more technical details.</p>
 
 <h2 id="introduction">Introduction</h2>
 
@@ -206,6 +209,7 @@ The left-hand side is split into thin slices of rows whereas of the right-hand s
   </ol>
 </div>
 
+</div>
 
 <div id="license">
 <div>
