@@ -137,7 +137,7 @@ Luc J. Bourhis
 
 <p>We will first list our postulates and then we will briefly motivate them.</p>
 
-<p><strong id="id-3901506224536964623-1">Postulate 1.</strong>
+<p><strong id="id--345046723426993163-1">Postulate 1.</strong>
  Linearity.</p>
 
 <p>Thus the mapping of any time <script type="math/tex">t</script> and any triplet of spatial coordinates <script type="math/tex">x</script> in one frame onto their equivalent <script type="math/tex">t'</script> and <script type="math/tex">x'</script> in another frame has a matrix <script type="math/tex">A</script> and we choose the following convention:</p>
@@ -162,13 +162,13 @@ x' &= v t + M x.
 \end{aligned}
 \end{equation} %]]></script>
 
-<p><strong id="id-3901506224536964623-2">Postulate 2.</strong>
+<p><strong id="id--345046723426993163-2">Postulate 2.</strong>
  Spatial isometries form a strict subgroup <script type="math/tex">O</script> of <script type="math/tex">G</script>.</p>
 
 <p>Spatial isometries are the matrices</p>
 
 <script type="math/tex; mode=display">\begin{equation}
-\mathcal{R} = \mat{1}{0}{0}{R}
+Q = \mat{1}{0}{0}{R}
 \end{equation}</script>
 
 <p>where <script type="math/tex">R</script> is orthogonal, i.e. <script type="math/tex">R R^T = I</script> where <script type="math/tex">I</script> is the identity matrix in dimension 3. This includes the subgroup of rotations, as well as the space inversion, which physicists call parity,</p>
@@ -177,7 +177,7 @@ x' &= v t + M x.
 P = \mat{1}{0}{0}{-I}.
 \end{equation}</script>
 
-<p><strong id="id-3901506224536964623-3">Postulate 3.</strong>
+<p><strong id="id--345046723426993163-3">Postulate 3.</strong>
  <script type="math/tex">G</script> does not contain any change of scale</p>
 
 <p>A change of scale has a diagonal matrix with positive coefficients, i.e.</p>
@@ -194,18 +194,18 @@ x'_3 &= a_3 x_3
 
 <p>where <script type="math/tex">x_i</script> and <script type="math/tex">x'_i</script> are the spatial coordinates, components of the vectors <script type="math/tex">x</script> and <script type="math/tex">x'</script> used so far, and <script type="math/tex">(a_0, a_1, a_2, a_3)</script> are positive constants.</p>
 
-<p><strong id="id-3901506224536964623-4">Postulate 4.</strong>
+<p><strong id="id--345046723426993163-4">Postulate 4.</strong>
  <script type="math/tex">G</script> is a Lie subgroup of the Lie group of <script type="math/tex">4 \times 4</script> matrices.</p>
 
 <h2 id="motivation-of-the-postulates">Motivation of the postulates</h2>
 
-<p><em><a href="#id-3901506224536964623-1">Postulate 1</a>.</em> The classic argument for linearity is the homogeneity of space-time but a better, more modern argument is simply to state that we search the transforms in the tangent space of “curved spacetime” (i.e. spacetime manifold in rigorous mathematical terms). This does not mean assuming General Relativity, not even the existence of a spacetime metric.</p>
+<p><em><a href="#id--345046723426993163-1">Postulate 1</a>.</em> The classic argument for linearity is the homogeneity of space-time but a better, more modern argument is simply to state that we search the transforms in the tangent space of “curved spacetime” (i.e. spacetime manifold in rigorous mathematical terms). This does not mean assuming General Relativity, not even the existence of a spacetime metric.</p>
 
-<p><em><a href="#id-3901506224536964623-2">Postulate 2</a>.</em> Isometries are practically important because they change the orientation and the handedness of frame axes, an operation which is a very common occurence in the practice of physics. They are also theoretically important because verifying whether a physical model is invariant under rotations or space inversion is mundane. It should be noted that we do not make any preconceived statement about whether the model has such an invariance. For example, the Electroweak Model mentioned in the introduction is not invariant under parity.</p>
+<p><em><a href="#id--345046723426993163-2">Postulate 2</a>.</em> Isometries are practically important because they change the orientation and the handedness of frame axes, an operation which is a very common occurence in the practice of physics. They are also theoretically important because verifying whether a physical model is invariant under rotations or space inversion is mundane. It should be noted that we do not make any preconceived statement about whether the model has such an invariance. For example, the Electroweak Model mentioned in the introduction is not invariant under parity.</p>
 
-<p><em><a href="#id-3901506224536964623-3">Postulate 3</a>.</em> We assume we have fixed units of time and lengths in all frames once and for all, and that from that point on, we are interested only in all the other transforms.</p>
+<p><em><a href="#id--345046723426993163-3">Postulate 3</a>.</em> We assume we have fixed units of time and lengths in all frames once and for all, and that from that point on, we are interested only in all the other transforms.</p>
 
-<p><em><a href="#id-3901506224536964623-4">Postulate 4</a>.</em> The group structure directly emerges from the definition of changes of frame:</p>
+<p><em><a href="#id--345046723426993163-4">Postulate 4</a>.</em> The group structure directly emerges from the definition of changes of frame:</p>
 
 <ol>
   <li>the identity matrix correspond to no change of frame;</li>
@@ -233,7 +233,7 @@ x'_3 &= a_3 x_3
 
 <p>There is an important property of the Lie algebra of a Lie group which will play an important role in our demonstrations:</p>
 
-<p><strong id="id-827665383653893362-1">Property 1.</strong>
+<p><strong id="id-3388444581771788384-1">Property 1.</strong>
  For any <script type="math/tex">A \in G</script>, and any <script type="math/tex">B \in \Lie{G}</script>, <script type="math/tex">A^{-1}BA \in \Lie{G}</script>.</p>
 
 <p><em>Proof.</em> First, <script type="math/tex">(A^{-1}BA)^n = A^{-1}B^nA</script> for any integer <script type="math/tex">n</script>, and therefore the exponential series satisfies</p>
@@ -244,12 +244,12 @@ A^{-1}\exp(B)A = \exp(A^{-1}BA),
 
 <p>which proves the result.</p>
 
-<p><strong id="id-827665383653893362-2">Property 2.</strong>
+<p><strong id="id-3388444581771788384-2">Property 2.</strong>
  <script type="math/tex">\exp\Lie{G}</script> is actually the connected component of the identity in <script type="math/tex">G</script>.</p>
 
 <p><em>Proof.</em> Since <script type="math/tex">\exp</script> is continuous and it maps the zero matrix onto the identity matrix, the result is obvious.</p>
 
-<p>Lie group of matrices may seem rather abstract but it is actually just a different, powerful, way to look at all the classic matrix groups. Let us study an example, which will be useful later: the group <script type="math/tex">O_3</script> of the <script type="math/tex">3\times 3</script> orthogonal matrices, i.e. the matrices of the isometry of 3-dimensional space, and its subgroup <script type="math/tex">SO_3</script> consisting of matrix rotations (those notations are standard but usually one specifies the field the matrix elements belong to, which is the field <script type="math/tex">\reals</script> of real numbers here). It is important since it is the spatial part of the group <script type="math/tex">O</script> introduced in <a href="#id-3901506224536964623-2">Postulate 2</a>.</p>
+<p>Lie group of matrices may seem rather abstract but it is actually just a different, powerful, way to look at all the classic matrix groups. Let us study an example, which will be useful later: the group <script type="math/tex">O_3</script> of the <script type="math/tex">3\times 3</script> orthogonal matrices, i.e. the matrices of the isometry of 3-dimensional space, and its subgroup <script type="math/tex">SO_3</script> consisting of matrix rotations (those notations are standard but usually one specifies the field the matrix elements belong to, which is the field <script type="math/tex">\reals</script> of real numbers here). It is important since it is the spatial part of the group <script type="math/tex">O</script> introduced in <a href="#id--345046723426993163-2">Postulate 2</a>.</p>
 
 <p>We will start by discussing the structure of <script type="math/tex">O_3</script> and <script type="math/tex">SO_3</script>. Given a rotation <script type="math/tex">R</script> of angle <script type="math/tex">\theta</script> about some vector <script type="math/tex">u</script>, there is a continuous path from <script type="math/tex">R</script> to the identity matrix, by continuously varying <script type="math/tex">\theta</script> toward 0. By definition, this means that <script type="math/tex">SO_3</script> is the connected component of the identity in <script type="math/tex">O_3</script>. Thus to prove that <script type="math/tex">O_3</script> is a Lie group, we only need to prove that the matrix exponential maps some Lie algebra to be determined onto <script type="math/tex">SO_3</script>. As a side note, <script type="math/tex">O_3</script> not only contains rotations but also the product of rotations by the spatial inversion. The latter form the other connected component of <script type="math/tex">O_3</script>, one which does obviously not contain the identity.</p>
 
@@ -298,11 +298,11 @@ A = \begin{pmatrix}   0 & -u_3 &  u_2 \\
 
 <p>It should be noted that we could actually have written a constructive proof instead, based on <a href="https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula#Matrix_notation">Rodrigues’ rotation formula in matrix form</a>. But the demonstration would have been rather similar to the one we will encounter when Lorentz boosts will emerge later in this article, and we therefore preferred the demonstration above which involves only very simple calculations. In any case, we have demonstrated</p>
 
-<p><strong id="id-2067526954471730885-1">Theorem 1.</strong>
+<p><strong id="id--2870854802309911570-1">Theorem 1.</strong>
  The group of orthogonal matrix <script type="math/tex">O_3</script> is a Lie group and <script type="math/tex">\Lie{O_3}</script> is the set of antisymmetric matrices <script type="math/tex">A_3</script>. The matrix exponential maps <script type="math/tex">A_3</script> onto <script type="math/tex">SO_3</script>.</p>
 
-<p><strong id="id--969214996379250872-1">Corollary 1.</strong>
- The group <script type="math/tex">O</script> introduced in <a href="#id-3901506224536964623-2">Postulate 2</a> is a Lie group and <script type="math/tex">\Lie{O}</script> is the set of matrices</p>
+<p><strong id="id--3192139513723254861-1">Corollary 1.</strong>
+ The group <script type="math/tex">O</script> introduced in <a href="#id--345046723426993163-2">Postulate 2</a> is a Lie group and <script type="math/tex">\Lie{O}</script> is the set of matrices</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 \mat{0}{0}{0}{A}
@@ -314,7 +314,7 @@ A = \begin{pmatrix}   0 & -u_3 &  u_2 \\
 
 <p>Our strategy will be to characterise <script type="math/tex">\Lie{G}</script> and then use the matrix exponential to find <script type="math/tex">G</script>. We start by demonstrating a simple lemma we will reuse a couple of time.</p>
 
-<p><strong id="id--3535258704395495363-1">Lemma 1.</strong>
+<p><strong id="id--954756301666532004-1">Lemma 1.</strong>
  If <script type="math/tex">A = \mat{a}{0}{0}{M} \in \Lie{G}</script>, then <script type="math/tex">a=0</script> and <script type="math/tex">M</script> is antisymmetric, i.e. <script type="math/tex">A \in \Lie{O}</script>.</p>
 
 <p><em>Proof.</em> With</p>
@@ -349,24 +349,24 @@ Q = \mat{1}{0}{0}{R}
 B' = Q^{-1} B Q = \mat{a}{0}{0}{\Delta}.
 \end{equation}</script>
 
-<p>With <a href="#id-827665383653893362-1">Property 1</a>, <script type="math/tex">B'</script> is in <script type="math/tex">\Lie{G}</script>, and therefore</p>
+<p>With <a href="#id-3388444581771788384-1">Property 1</a>, <script type="math/tex">B'</script> is in <script type="math/tex">\Lie{G}</script>, and therefore</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 \notag
 \exp B' = \mat{\exp a}{0}{0}{\exp \Delta}.
 \end{equation}</script>
 
-<p>is in <script type="math/tex">G</script>. But this is a change of scale, and therefore <a href="#id-3901506224536964623-3">Postulate 3</a> requires that <script type="math/tex">a=0</script> and <script type="math/tex">\Delta=0</script>. This completes the proof.</p>
+<p>is in <script type="math/tex">G</script>. But this is a change of scale, and therefore <a href="#id--345046723426993163-3">Postulate 3</a> requires that <script type="math/tex">a=0</script> and <script type="math/tex">\Delta=0</script>. This completes the proof.</p>
 
 <p>Then we move to the keystone of our demonstration, as the subsequent work will simply be the computation of matrix exponentials.</p>
 
-<p><strong id="id--3535258704395495363-2">Lemma 2.</strong>
+<p><strong id="id--954756301666532004-2">Lemma 2.</strong>
  One and only one of the following vector space is a subspace of <script type="math/tex">\Lie{G}</script> and <script type="math/tex">\Lie{G}</script> is the sum of <script type="math/tex">\Lie{O}</script> and of this subspace:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
 K_G &= \set{\mat{0}{u}{0}{0}}{u \in \reals^3}  \tag{I} \\
-K_C &= \set{\mat{0}{0}{v}{0}}{v \in \reals^3}  \tag{II} \\
+K_S &= \set{\mat{0}{0}{v}{0}}{v \in \reals^3}  \tag{II} \\
 K_L^\epsilon &= \set{\LorGen{u}}{u \in \reals^3} \tag{III} \\
 \end{align} %]]></script>
 
@@ -386,7 +386,7 @@ A = \mat{a}{u}{v}{M}.
 B=\mat{a}{0}{0}{M}
 \end{equation}</script>
 
-<p>and <a href="#id--3535258704395495363-1">lemma 1</a> implies that <script type="math/tex">a=0</script> and <script type="math/tex">M</script> is antisymmetric. Thus</p>
+<p>and <a href="#id--954756301666532004-1">lemma 1</a> implies that <script type="math/tex">a=0</script> and <script type="math/tex">M</script> is antisymmetric. Thus</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 \notag
@@ -414,10 +414,10 @@ K=\set{\mat{0}{u}{v}{0}}{u,v \in \reals^3}
 
 <script type="math/tex; mode=display">\begin{equation}
 \notag
-\mathcal{R} = \mat{1}{0}{0}{R}
+Q = \mat{1}{0}{0}{R}
 \end{equation}</script>
 
-<p>and any real <script type="math/tex">\lambda</script>, <script type="math/tex">A'=\lambda\mathcal{R}A\mathcal{R}^{-1} \in \Lie{G}</script> but</p>
+<p>and any real <script type="math/tex">\lambda</script>, <script type="math/tex">A'=\lambda QAQ^{-1} \in \Lie{G}</script> but</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 \notag
@@ -451,7 +451,7 @@ A = \mat{0}{0}{v}{0} \in K_G,
 [A,B]=\mat{-p^T v}{0}{0}{vp^T}.
 \end{equation}</script>
 
-<p><a href="#id--3535258704395495363-1">Lemma 1</a> requires that <script type="math/tex">p^Tv=0</script>. Since <script type="math/tex">v</script> can be any 3-vector, this implies that <script type="math/tex">p=0</script>. We have therefore demonstrated that</p>
+<p><a href="#id--954756301666532004-1">Lemma 1</a> requires that <script type="math/tex">p^Tv=0</script>. Since <script type="math/tex">v</script> can be any 3-vector, this implies that <script type="math/tex">p=0</script>. We have therefore demonstrated that</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 \KLG \subset K_G.
@@ -461,7 +461,7 @@ A = \mat{0}{0}{v}{0} \in K_G,
 
 <p><em>Case 2:</em> <script type="math/tex">\KLG</script> has an element <script type="math/tex">A=\mat{0}{u}{0}{0}</script> with <script type="math/tex">u \ne 0</script>.</p>
 
-<p>The analysis is completely similar to the previous case, replacing <script type="math/tex">K_G</script> with <script type="math/tex">K_C</script>.</p>
+<p>The analysis is completely similar to the previous case, replacing <script type="math/tex">K_G</script> with <script type="math/tex">K_S</script>.</p>
 
 <p><em>Case 3:</em> <script type="math/tex">\KLG</script> has an element <script type="math/tex">A=\mat{0}{u}{v}{0}</script> with <script type="math/tex">u \ne 0</script> and <script type="math/tex">v \ne 0</script>.</p>
 
@@ -469,10 +469,10 @@ A = \mat{0}{0}{v}{0} \in K_G,
 
 <script type="math/tex; mode=display">\begin{equation}
 \notag
-\mathcal{R}_0 = \mat{1}{0}{0}{R_0},
+Q_0 = \mat{1}{0}{0}{R_0},
 \end{equation}</script>
 
-<p>we have <script type="math/tex">B=\mathcal{R}_0A\mathcal{R}_0^{-1} \in G</script> and therefore <script type="math/tex">[A,B] \in G</script>. But</p>
+<p>we have <script type="math/tex">B=Q_0AQ_0^{-1} \in G</script> and therefore <script type="math/tex">[A,B] \in G</script>. But</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 \notag
@@ -486,7 +486,7 @@ B=\mat{0}{\frac{1}{\kappa} v}{\kappa u}{0}.
 [A,B] = \mat{\kappa u^2 - \frac{1}{\kappa}v^2}{0}{0}{\frac{1}{\kappa}vv^T - \kappa uu^T}.
 \end{equation}</script>
 
-<p>Then <a href="#id--3535258704395495363-1">lemma 1</a> requires that</p>
+<p>Then <a href="#id--954756301666532004-1">lemma 1</a> requires that</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
@@ -509,10 +509,10 @@ A=\LorGen{w}.
 
 <script type="math/tex; mode=display">\begin{equation}
 \notag
-\mathcal{R} = \mat{1}{0}{0}{R}
+Q = \mat{1}{0}{0}{R}
 \end{equation}</script>
 
-<p>and any real <script type="math/tex">\lambda</script>, <script type="math/tex">A'=\lambda\mathcal{R}A\mathcal{R}^{-1} \in \Lie{G}</script> but</p>
+<p>and any real <script type="math/tex">\lambda</script>, <script type="math/tex">A'=\lambda QAQ^{-1} \in \Lie{G}</script> but</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 \notag
@@ -546,7 +546,7 @@ A=\LorGen{w},
 [A,B] = \mat{\frac{1}{c}w^Tq - \epsilon c p^Tw}{0}{0}{\epsilon c w p^T - \frac{1}{c} q w^T}
 \end{equation}</script>
 
-<p>and <a href="#id--3535258704395495363-1">lemma 1</a> then requires that</p>
+<p>and <a href="#id--954756301666532004-1">lemma 1</a> then requires that</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
@@ -573,23 +573,23 @@ B =c\mat{0}{\frac{1}{c}p}{\epsilon c p}{0}
 \KLG \subset K_L^\epsilon.
 \end{equation}</script>
 
-<p>With the previous opposite inclusion (\ref{KepsSubsetKLG}), this completes the proof of this case and therefore of the proof of <a href="#id--3535258704395495363-2">lemma 2</a> too.</p>
+<p>With the previous opposite inclusion (\ref{KepsSubsetKLG}), this completes the proof of this case and therefore of the proof of <a href="#id--954756301666532004-2">lemma 2</a> too.</p>
 
 <p>We can now prove the following theorem.</p>
 
-<p><strong id="id-2067526954471730885-2">Theorem 2.</strong>
+<p><strong id="id--2870854802309911570-2">Theorem 2.</strong>
  A group <script type="math/tex">G</script> of transforms satisfying postulate 1–3 is one of the following group:</p>
 
 <ul>
-  <li>the Caroll group (I)</li>
+  <li>the synchrony group (I)</li>
   <li>the Galilean group (II)</li>
   <li>the Lorentz group (III<sup>+</sup>)</li>
   <li>the group of rotations in spacetime (III<sup>-</sup>)</li>
 </ul>
 
-<p><em>Proof.</em> Those four cases obviously correspond to the four cases of <a href="#id--3535258704395495363-2">lemma 2</a>. Thus let us review them in turn.</p>
+<p><em>Proof.</em> Those four cases obviously correspond to the four cases of <a href="#id--954756301666532004-2">lemma 2</a>. Thus let us review them in turn.</p>
 
-<p><em>Case I and II</em>: it is trivial to verify that any <script type="math/tex">K \in K_G</script> and any <script type="math/tex">K \in K_C</script> is such that <script type="math/tex">K^2 = 0</script> and therefore <script type="math/tex">K^n = 0</script> for any integer <script type="math/tex">n \ge 2</script>. As a result, the exponential series is trivial: <script type="math/tex">\exp K = I + K</script>. Thus in case I, this gives</p>
+<p><em>Case I and II</em>: it is trivial to verify that any <script type="math/tex">K \in K_G</script> and any <script type="math/tex">K \in K_S</script> is such that <script type="math/tex">K^2 = 0</script> and therefore <script type="math/tex">K^n = 0</script> for any integer <script type="math/tex">n \ge 2</script>. As a result, the exponential series is trivial: <script type="math/tex">\exp K = I + K</script>. Thus in case I, this gives</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 \exp K = \mat{1}{u}{0}{I}
@@ -605,7 +605,7 @@ x' &= x.
 \end{aligned}
 \end{equation} %]]></script>
 
-<p>Lévy-Leblond named them “Carrol transforms” in <a href="#Levy-Leblond:1965" class="bibliography-reference">Lévy- Leblond (1965)</a>, a term he reused in <a href="#Levy-Leblond:1979" class="bibliography-reference">Lévy- Leblond and  Provost (1979)</a>, in eqn (63). The first paper presents an interesting physical discussion of them (it is unfortunately in French!).</p>
+<p>These transformations are synchrony transformations. This ties in the well-known presentation of Special Relativity in which a clock sits at each location <script type="math/tex">x</script>, motionless in that system of coordinates, clock which defines the time <script type="math/tex">t</script> at that location. Because those transformations leave the position invariant while shifting the time in a location-dependent manner, we are therefore just changing how those clocks are synchronised with each others. Hence the name synchrony group for <script type="math/tex">K_S</script>. It should be noted that Lévy-Leblond calls them the Carroll transforms for reasons he developped in <a href="#Levy-Leblond:1965" class="bibliography-reference">Lévy- Leblond (1965)</a>, an article which expounds in great details this group of transforms, including its quantum representations.</p>
 
 <p>In case II, this gives</p>
 
@@ -691,32 +691,40 @@ x' &= x - vt.
 
 <p>In case (III<sup>+</sup>), we recognise a Lorentz boost, parametrised by the rapidity <script type="math/tex">\varphi</script> and the direction of the boost <script type="math/tex">\hat{u}</script>. The case (III<sup>-</sup>) is not mainstream but time and space are mixed as two spatial coordinates would be by a rotation of angle <script type="math/tex">\varphi</script>, hence the name “rotation in spacetime”.</p>
 
-<p>Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but also two exotic groups which have never played any role in physics. But we can prune them with an additional hypothesis.</p>
+<p>Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but two other groups. The rotations of spacetime are definitively “exotic” in the sense that they have never played any role in physics: it is rather puzzling they appear and it is very desirable we find a criteria to eliminate them. The synchrony group is important on the contrary as a way to formalise the conventionality of synchronicity which plays an essential role when considering experimental aspects, either real experiments or gedanken ones. Actually, there is a deeper point to be made here.</p>
+
+<p>Indeed, it would make sense to combine the synchrony group with either of the Galilean group, the Lorentz group, or the spacetime rotations. Indeed, the latter embodies the physical content of the theory whereas the former embodies a conventional aspect. But then the Lie algebra in those three cases will turn out to be the set of matrices <script type="math/tex">\mat{0}{u}{v}{0}</script> where <script type="math/tex">u</script> and <script type="math/tex">v</script> span <script type="math/tex">\reals^3</script>. But then the commutator of two of them, <script type="math/tex">A_1=\mat{0}{u_1}{v_1}{0}</script> and <script type="math/tex">A_2=\mat{0}{u_2}{v_2}{0}</script> is</p>
+
+<p><script type="math/tex">\comm{A_1}{A_2}=\mat{u_1^Tv2-u_2^Tv_1}{0}{0}{v_1u_2^T-v_2u_1^T}</script>.</p>
+
+<p>As a result, our group now features changes of scale. We have therefore demonstrated that our postulate 3 banning any change of scale does eventually prevent us for including synchrony transformations in our group of transforms. But this is only because postulates 1–4 lead only to the Galilean group, the Lorentz group and the group of spacetime rotations, beside the synchrony transformations.</p>
+
+<p>The question we would like to address now is whether we can find an extra postulate so as to eliminate the synchrony transformations and the spacetime rotations. For the former, we could require on a physical ground that we cannot have only synchrony transformations. But it turns out we can appeal to a more general idea.</p>
 
 <h2 id="causality">Causality</h2>
 
-<p>The concept of cause and effect would be meaningless if all observers could not agree which of two events happens first. Hence the following requirement</p>
+<p>It would be highly convenient if any two observers could agree which of two events happens first. This amount to require the existence of a synchronisation procedure resulting in that property. It is therefore largely conventional but, as we have just seen, we have already banned general synchronies. Therefore it makes sense to “bite the bullet”. Hence the following requirement</p>
 
-<p><strong id="id-3901506224536964623-5">Postulate 5.</strong>
+<p><strong id="id--345046723426993163-5">Postulate 5.</strong>
  (Causality) There exists a non-empty set <script type="math/tex">E</script> of events so that for any two events <script type="math/tex">e_1</script> and <script type="math/tex">e_2</script> such that <script type="math/tex">e_1</script> is seen to appear before <script type="math/tex">e_2</script> in one frame, then in any other frame, <script type="math/tex">e_1</script> is also seen to appear before <script type="math/tex">e_2</script>.</p>
 
 <p>Because of linearity, this is equivalent to state that for any <script type="math/tex">t > 0</script>, there exists spatial coordinates <script type="math/tex">x</script> such that for every <script type="math/tex">M \in G</script>, <script type="math/tex">\vec{t'}{x'} = M \vec{t}{x}</script> is such that <script type="math/tex">t'>0</script>. Then we wish to prove</p>
 
-<p><strong id="id--3535258704395495363-3">Lemma 3.</strong>
- The Carroll group and the group of rotations in spacetime violate causality.</p>
+<p><strong id="id--954756301666532004-3">Lemma 3.</strong>
+ The synchrony group and the group of rotations in spacetime violate causality.</p>
 
-<p>For the carroll group, <script type="math/tex">t' = t\left(1 - u^T \frac{x}{t}\right)</script>. But for any <script type="math/tex">x \in \reals^3</script> and any <script type="math/tex">t > 0</script>, one can find big enough a vector <script type="math/tex">u</script> such that the factor of <script type="math/tex">t</script> is negative.</p>
+<p>For the synchrony group, <script type="math/tex">t' = t\left(1 - u^T \frac{x}{t}\right)</script>. But for any <script type="math/tex">x \in \reals^3</script> and any <script type="math/tex">t > 0</script>, one can find big enough a vector <script type="math/tex">u</script> such that the factor of <script type="math/tex">t</script> is negative. This was intuitively obvious: causality as we defined it cannot hold with an arbitrary synchronisation of clocks but we see that we need <script type="math/tex">u</script> to span the whole of <script type="math/tex">\reals^3</script> for this argument to work mathematically, a property which, in turns, comes from requiring a group in the first place as we saw in the previous section.</p>
 
 <p>For the rotations in spacetime, <script type="math/tex">t' = t\cos\varphi\left(1 - \frac{1}{c}\hat{u}^T \frac{x}{t}\tan\varphi\right)</script>. Since <script type="math/tex">\lim_{\varphi \to \frac{\pi}{2}} \tan\varphi = +\infty</script>, for any <script type="math/tex">x \in \reals^3</script> and any <script type="math/tex">t > 0</script>, one can choose <script type="math/tex">\varphi</script> such that the factor of <script type="math/tex">t\cos\varphi</script> is negative. This concludes the proof.</p>
 
-<p><strong id="id--3535258704395495363-4">Lemma 4.</strong>
+<p><strong id="id--954756301666532004-4">Lemma 4.</strong>
  The Galilean and the Lorentz group satisfy causality.</p>
 
 <p>This is trivial for the former. For the latter, we have <script type="math/tex">t'=t\cosh\varphi\left(1-\frac{1}{c}\hat{u}^T \frac{x}{t}\tanh\varphi\right)</script>. Since for any <script type="math/tex">\varphi \in \reals</script>, <script type="math/tex">\tanh\varphi</script> is between -1 and 1, for any <script type="math/tex">(t,x)</script> such that <script type="math/tex">(ct)^2 - x^2 > 0</script> and <script type="math/tex">t > 0</script>, we have <script type="math/tex">t' > 0</script>. Thus the set of event <script type="math/tex">E</script> is the interior of the so-called light cone.</p>
 
 <p>We can now conclude with</p>
 
-<p><strong id="id-2067526954471730885-3">Theorem 3.</strong>
+<p><strong id="id--2870854802309911570-3">Theorem 3.</strong>
  The only groups <script type="math/tex">G</script> of transforms satisfying postulates 1–5 are the Galilean group and the Lorentz group.</p>
 
 <div class="footnotes">

@@ -220,7 +220,7 @@ S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.
 
 <p>Ceci étant posé, le premier résultat important que:</p>
 
-<p><strong id="id-1541019432132164801-1">Théorème 1.</strong>
+<p><strong id="id--3688729767766711751-1">Théorème 1.</strong>
  L’espérance de <script type="math/tex">S</script> pour un ket séparable <script type="math/tex">\ket\psi=\ket\phi\ket\xi</script> ne viole pas les inégalités CHSH.</p>
 
 <p>Dans ce cas,</p>
@@ -231,14 +231,14 @@ S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.
 
 <p>où les espérances sont pour <script type="math/tex">\ket\phi</script> dans le cas de <script type="math/tex">A</script> et <script type="math/tex">A'</script> et pour <script type="math/tex">\ket\xi</script> dans le cas de <script type="math/tex">B</script> et <script type="math/tex">B'</script>. Le théorème résulte alors du lemme suivant.</p>
 
-<p><strong id="id--3761751667686167348-1">Lemme 1.</strong>
+<p><strong id="id--4394405045049492640-1">Lemme 1.</strong>
  Si <script type="math/tex">u</script>, <script type="math/tex">v</script>, <script type="math/tex">x</script>, et <script type="math/tex">y</script> sont dans <script type="math/tex">[-1, 1]</script>, alors</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 -2 \le u(x-y)+v(x+y) \le 2.
 \end{equation}</script>
 
-<h3 id="c-la-non-sparabilit-une-condition-suffisante">c. La non-séparabilité: une condition suffisante</h3>
+<h3 id="section-c">c. La non-séparabilité: une condition suffisante</h3>
 
 <p>Je vais dans cette section et les suivantes considérer le cas de particule de spin 1/2, pour des raisons pédagogiques de simplicité mais les résultats que je vais démontrer peuvent être prouver pour d’autres systèmes quantiques. La dimension de <script type="math/tex">\Hsingle</script> est donc 2 et l’on y définit les opérateurs de spin habituels <script type="math/tex">S_x, S_y, S_z</script>, à une normalisation de <script type="math/tex">\hbar/2</script> près, de manière à avoir des valeurs propres <script type="math/tex">\pm 1</script>. On peut alors se donner une base <script type="math/tex">\mathcal{B}</script> où les matrices de ces opérateurs sont les matrices de Pauli <script type="math/tex">\sigma_x</script>, <script type="math/tex">\sigma_y</script>, et <script type="math/tex">\sigma_z</script>.</p>
 
@@ -256,7 +256,7 @@ S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.
 
 <p>On peut maintenant établir la condition suivante.</p>
 
-<p><strong id="id-1541019432132164801-2">Théorème 2.</strong></p>
+<p><strong id="id--3688729767766711751-2">Théorème 2.</strong></p>
 
 <p><script type="math/tex">\ket\psi</script> est non-séparable si et seulement si <script type="math/tex">\sin2\varphi \ne 0.</script></p>
 
@@ -291,10 +291,10 @@ S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
 \begin{aligned}
-A &= S_{1,x},\\
-B &= S_{1,x}\sin b + S_{1,z}\cos b,\\
-A' &= S_{2,z},\\
-B' &= -S_{2,x}\sin b + S_{2,z}\cos b,
+&A = S_{1,x},\\
+&A' = S_{1,z},\\
+&B = S_{1,x}\sin b + S_{1,z}\cos b,\\
+&B' = -S_{1,x}\sin b + S_{1,z}\cos b,
 \end{aligned}\label{pauliDecomposition}
 \end{equation} %]]></script>
 
@@ -320,7 +320,13 @@ B' &= -S_{2,x}\sin b + S_{2,z}\cos b,
 \expect{S} = 2\cos b(1 - \sin 2\varphi\tan b).
 \end{equation}</script>
 
-<p>En choisissant <script type="math/tex">\tan b = -\sin 2\varphi</script>, on a</p>
+<p>En choisissant</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\tan b = -\sin 2\varphi, \label{choice:of:b:for:max:violation}
+\end{equation}</script>
+
+<p>on a</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 \expect{S} = 2(1 + \sin^2 2\varphi)^\frac{1}{2},
@@ -365,6 +371,8 @@ Par conséquent, les valeurs propres de <script type="math/tex">S</script> s’�
 
 <p>Si au contraire aucune de ces paires d’opérateurs ne commute, alors <script type="math/tex">\alpha\beta > 0</script>. Dans ce cas, les valeurs propres <script type="math/tex">\pm\sqrt{4+\alpha\beta}</script> sont en dehors de l’intervalle <script type="math/tex">[-2,2]</script>.
 Quelle violation maximale peut-on obtenir? Comme <script type="math/tex">\matnorm{\comm{A}{A'}} \le 2 \matnorm{A} \matnorm{A'}</script>, nécessairement <script type="math/tex">-2 \le \alpha \le 2</script> puisque <script type="math/tex">\matnorm{A}=\matnorm{A'}=1</script>. De même, <script type="math/tex">-2 \le \beta \le 2</script>. Cela démontre que la borne maximale est <script type="math/tex">2\sqrt{2}</script> comme annoncé plus haut mais nous voyons aussi que cette borne est réalisée quand <script type="math/tex">\alpha = \beta = \pm 2</script>.</p>
+
+<p>Il est facile de voir que l’exemple étudié en <a href="#section-c">section c</a> rentre dans ce théorème. En effet, nous avons vu que la violation maximale est obtenue pour <script type="math/tex">\varphi=\pi/4</script>, et donc avec l’équation (\ref{choice:of:b:for:max:violation}), on a <script type="math/tex">b=-\pi/4</script>, et donc les équations (\ref{pauliDecomposition}) impliquent que <script type="math/tex">\comm{A}{A'}</script> et <script type="math/tex">\comm{B}{B'}</script> admettent comme matrice <script type="math/tex">-2\sigma_y</script> dans les bases respectives <script type="math/tex">\mathcal{B}_1</script> et <script type="math/tex">\mathcal{B}_2</script>. Comme les valeurs propres de <script type="math/tex">\sigma_y</script> sont <script type="math/tex">\pm 1</script>, CQFD.</p>
 
 </div>
 <h2>Bibliographie</h2>

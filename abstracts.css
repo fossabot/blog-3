@@ -23,7 +23,7 @@
   /*
    * Those are available on MacOS and iOS
    */ }
-  @media (min-device-width: 120em) {
+  @media (min-device-width: 90.0625em) {
     :root {
       font-size: 1.0625em; } }
 
