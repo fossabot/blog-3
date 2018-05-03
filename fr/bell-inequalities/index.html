@@ -94,7 +94,7 @@ Page Principale
 <div class="topic_categories">physique</div>
 <ul class="topic_list">
 <li><a href="./">Étude d'une Inégalité de Bell</a></li>
-<li><a href="../bell-inequalities-no-math/">Une présentation ludique des inégalités de Bell</a></li>
+<li><a href="../bell-inequalities-no-math/">Une présentation ludique d'un théorème de Bell</a></li>
 </ul>
 <hr>
 </div>
@@ -110,7 +110,7 @@ Luc J. Bourhis
 
 <p>Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot “classique” est ici entendu par opposition à “quantique”. Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, je vais démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l’honneur du chercheur qui démontra la première d’entre elles. De nombreuses expériences différentes ont été réalisées, dont je donnerais un aperçu, menant à une double conclusion: d’une part, leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme; d’autre part, ils sont en accord avec les prédictions de la mécanique quantique.</p>
 
-<h2 id="lexprience">1. L’expérience</h2>
+<h2 id="1-lexpérience">1. L’expérience</h2>
 
 <p>Je vais présenter une expérience idéalisée. Il ne s’agit pas d’une pure expérience de pensée car des expériences réelles furent réalisées sur les mêmes principes mais l’analyse rigoureuses de ces dernières est trop complexe pour le but pédagogique que je me suis fixé pour cet article. Je me conteterais de faire quelques liens qualitatifs avec ces expériences réelles.</p>
 
@@ -122,10 +122,10 @@ Luc J. Bourhis
 D_N(a,b) = \frac{N_\text{identique}(a,b)-N_\text{différente}(a,b)}{N} \label{countingRatios},
 \end{equation}</script>
 
-<p>où <script type="math/tex">N_\text{identique}(a,b)</script> (resp. <script type="math/tex">N_\text{différente}(a,b)</script>) est le nombre de paires pour lesquelles <script type="math/tex">A</script> et <script type="math/tex">B</script> ont la même valeur (resp. des valeurs différentes). Ces comptages dépendent à priori des réglages <script type="math/tex">a</script> et <script type="math/tex">b</script>, ce que j’ai rendu explicite dans cette équation. Comme <script type="math/tex">A</script> et <script type="math/tex">B</script> ne peuvent prendre que les valeurs +1 et -1, <script type="math/tex">D_N(a,b)</script> est la moyenne du produit <script type="math/tex">AB</script> sur les <script type="math/tex">N</script> paires mesurées, c’est à dire ce que l’on appelle la corrélation entre <script type="math/tex">A</script> et <script type="math/tex">B</script>.
+<p>où <script type="math/tex">N_\text{identique}(a,b)</script> (resp. <script type="math/tex">N_\text{différente}(a,b)</script>) est le nombre de paires pour lesquelles <script type="math/tex">A</script> et <script type="math/tex">B</script> ont la même valeur (resp. des valeurs différentes). Ces comptages dépendent à priori des réglages <script type="math/tex">a</script> et <script type="math/tex">b</script>, ce que j’ai rendu explicite dans cette équation. Comme <script type="math/tex">A</script> et <script type="math/tex">B</script> ne peuvent prendre que les valeurs +1 et -1, <script type="math/tex">D_N(a,b)</script> est la moyenne du produit <script type="math/tex">AB</script> sur les <script type="math/tex">N</script> paires mesurées, c’est à dire ce que l’on appelle la corrélation entre <script type="math/tex">A</script> et <script type="math/tex">B</script>.<br>
 L’astuce est alors de répéter l’expérience avec des réglages différents, de combiner ces différentes corrélations, et de les comparer avec les prédictions du modèle réaliste et locale, que nous allons maintenant étudier.</p>
 
-<h2 id="le-modle">2. Le modèle</h2>
+<h2 id="2-le-modèle">2. Le modèle</h2>
 
 <p>L’information contenue dans chaque paire, ou du moins celle qui aura une influence sur les mesures, sera notée <script type="math/tex">\lambda</script>, qui est aussi appelée l’état de la paire à cause de l’influence du vocabulaire de la mécanique quantique. Le point fondamental est qu’une partie de cette information ne nous est pas connue: ce sont les fameuses variables cachées. En pratique, <script type="math/tex">\lambda</script> comprend donc au moins la polarisation des photons, ou le spin des électrons ou des ions. Mais il comprend peut-être aussi des élements d’information dont nous n’avons pas la moindre idée. En fait, <a href="#Einstein:1935aa" class="bibliography-reference"> Einstein,  Podolsky, et  Rosen (1935)</a> ont argumenté de la nécessité de tels éléments d’information en plus de ce que la mécanique quantique prend en compete, et cet argument fut la motivation de <a href="#Bell:1964" class="bibliography-reference"> Bell (1964)</a>, comme le montre clairement le titre de l’article.</p>
 
@@ -139,17 +139,17 @@ L’astuce est alors de répéter l’expérience avec des réglages différents
 
 <p>Toutes les inégalités de Bell résulte des deux hypothèses fondamentales de localité et de réalisme (en anglais Objective Local Theory, parfois abrégé en OLT). Nous allons maintenant les présenter en détails. Tout l’enjeu est de décrire précisément de quoi dépendent les mesures de <script type="math/tex">A</script> et <script type="math/tex">B</script>.</p>
 
-<h3 id="a-le-critre-de-ralisme">a. Le critère de réalisme</h3>
+<h3 id="a-le-critère-de-réalisme">a. Le critère de réalisme</h3>
 
 <p>Une théorie “réaliste” suppose l’existence d’une réalité indépendente de l’observateur et déterministe, ce qui constitue un des piliers de la mécanique classique. Une telle théorie introduit des probabilités, comme en physique statistique, uniquement parce que l’on ne peut pas décrire complètement les détails microscopiques des systèmes en jeu. Plus précisément, une telle théorie fait l’hypothèse que <em>l’état de la paire <script type="math/tex">\lambda</script> est entièrement suffisant pour déterminer, conjointement avec les réglages des appareils, le résultat des mesures</em> mais que l’état de chaque paire ne pouvant être connu, il nous faut introduire une mesure de probabilité <script type="math/tex">\rho</script> sur l’ensemble <script type="math/tex">\Lambda</script> des valeurs pouvant être prises par <script type="math/tex">\lambda</script>. Par conséquent, cette mesure ne dépend que du mécanisme de production des paires et donc pas des réglages des appareils de mesure, un point très important pour démontrer les inégalités de Bell. Notons que nous n’avons à priori aucune idée de la forme que peut prendre <script type="math/tex">\rho</script>, et que cette information n’est pas nécessaire pour démontrer les inégalités de Bell.</p>
 
-<h3 id="b-le-critre-de-localit">b. Le critère de localité</h3>
+<h3 id="b-le-critère-de-localité">b. Le critère de localité</h3>
 
 <p>Ce critère s’exprime ainsi: <em>l’appareil de mesure I fonctionne indépendamment de l’appareil de mesure II</em>. On pourrait imaginer à l’inverse que des facteurs extérieurs influencent les deux appareils, créant ainsi une corrélation entre les mesures, ou bien qu’un des appareils envoit, juste après avoir fait sa mesure, une information à l’autre, juste avant que ce dernier ne fasse sa mesure, influençant ainsi celle-ci. La conséquence essentielle de ce postulat est que, combiné avec le critère de réalisme, la mesure <script type="math/tex">A</script> par l’appareil I ne peut dépendre que du réglage <script type="math/tex">a</script> de cet appareil et de l’état de la pair <script type="math/tex">\lambda</script>. On notera donc <script type="math/tex">A(\lambda)</script> en laissant la dépendence en <script type="math/tex">a</script> implicite. Et de même pour l’autre mesure, <script type="math/tex">B(\lambda)</script>, qui ne dépend que de <script type="math/tex">\lambda</script> et du réglage <script type="math/tex">b</script> de l’appareil II.</p>
 
 <p>On pourrait être tenté d’aller plus loin et de dire que <script type="math/tex">A</script> ne peut dépendre que de l’état de la particule 1 mais comme cet état peut être corrélé avec celui de la particule 2, cette hypothèse est en générale fausse. Le critère de localité, qui s’applique aux analyseurs, n’est donc pas équivalent au critère de séparabilité, comme nous l’avions déjà mentionné plus haut.</p>
 
-<h2 id="dmonstration-des-ingalits-de-bell">3. Démonstration des inégalités de Bell</h2>
+<h2 id="3-démonstration-des-inégalités-de-bell">3. Démonstration des inégalités de Bell</h2>
 
 <p>La quantité mesurée étant la corrélation entre les mesures sur les membres d’une paire comme nous l’avons expliqué plus haut, le point de départ est donc l’expression de cette corrélation dans notre modèle,</p>
 
@@ -188,7 +188,7 @@ R(a,a',b,b') = D_N(a',b) - D_N(a,b) + D_N(a',b') + D_N(a,b')
 
 <p>et à chercher des réglages <script type="math/tex">a</script>, <script type="math/tex">a'</script>, <script type="math/tex">b</script>, <script type="math/tex">b'</script> des appareils de mesure tels que <script type="math/tex">R(a,a',b,b')</script> soit plus grand que 2 en valeur absolue. De telles expériences furent réalisées, et cette borne fut effectivement violée. La conclusion est donc que l’une ou l’autre des deux hypothèses de réalisme ou de localité est falsifiée. L’étape suivante est alors d’étudier les prédictions des théories qui ne contiennent pas ces hypothèses, et de comparer leur prédictions pour les bornes de <script type="math/tex">R(a,a',b,b')</script>. En premier lieu, vient la mécanique quantique, pour laquelle les deux hypothèses sont fausses, mais il est aussi intéressant de chercher si il est possible de déveloper une théorie conservant l’une des deux.</p>
 
-<h2 id="violation-des-ingalits-de-bell-en-mcanique-quantique">4. Violation des inégalités de Bell en mécanique quantique</h2>
+<h2 id="4-violation-des-inégalités-de-bell-en-mécanique-quantique">4. Violation des inégalités de Bell en mécanique quantique</h2>
 
 <p>Nous allons maintenant étudier la violation des inégalités de Bell prédite par la mécanique quantique.</p>
 
@@ -216,11 +216,11 @@ R(A, A', B, B') = \left| \expect{S} \right| \label{Rexpect}
 S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.
 \end{equation}</script>
 
-<h3 id="b-une-condition-ncessaire-la-non-sparabilit">b. Une condition nécessaire: la non-séparabilité</h3>
+<h3 id="b-une-condition-nécessaire-la-non-séparabilité">b. Une condition nécessaire: la non-séparabilité</h3>
 
 <p>Ceci étant posé, le premier résultat important que:</p>
 
-<p><strong id="id--3688729767766711751-1">Théorème 1.</strong>
+<p><strong id="id-1054796923581983845-1">Théorème 1.</strong><br>
  L’espérance de <script type="math/tex">S</script> pour un ket séparable <script type="math/tex">\ket\psi=\ket\phi\ket\xi</script> ne viole pas les inégalités CHSH.</p>
 
 <p>Dans ce cas,</p>
@@ -231,12 +231,25 @@ S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.
 
 <p>où les espérances sont pour <script type="math/tex">\ket\phi</script> dans le cas de <script type="math/tex">A</script> et <script type="math/tex">A'</script> et pour <script type="math/tex">\ket\xi</script> dans le cas de <script type="math/tex">B</script> et <script type="math/tex">B'</script>. Le théorème résulte alors du lemme suivant.</p>
 
-<p><strong id="id--4394405045049492640-1">Lemme 1.</strong>
+<p><strong id="id-4177718766372876709-1">Lemme 1.</strong><br>
  Si <script type="math/tex">u</script>, <script type="math/tex">v</script>, <script type="math/tex">x</script>, et <script type="math/tex">y</script> sont dans <script type="math/tex">[-1, 1]</script>, alors</p>
 
 <script type="math/tex; mode=display">\begin{equation}
 -2 \le u(x-y)+v(x+y) \le 2.
 \end{equation}</script>
+
+<p>Posons <script type="math/tex">X=(x+y)/2</script> et <script type="math/tex">Y=(x-y)/2</script>. Le domaine de <script type="math/tex">(x,y)</script> devient pour <script type="math/tex">(X,Y)</script>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+&-1 < X + Y < 1,\\
+&-1 < X - Y < 1,
+\end{align} %]]></script>
+
+<p>Donc, du fait du domaine autorisé pour <script type="math/tex">u</script> et <script type="math/tex">v</script>, si <script type="math/tex">X \ge 0</script> et <script type="math/tex">Y \ge 0</script>, alors <script type="math/tex">uX + vY \le X+Y \le 1</script>. De même, si <script type="math/tex">X \ge 0</script> et <script type="math/tex">% <![CDATA[
+Y < 0 %]]></script>, alors <script type="math/tex">uX + vY \le X-Y \le 1</script>. On finit en traitant de manière similaire toutes les possibilités restantes de signes de <script type="math/tex">X</script> et <script type="math/tex">Y</script>.</p>
+
+<p>CQFD.</p>
 
 <h3 id="section-c">c. La non-séparabilité: une condition suffisante</h3>
 
@@ -256,7 +269,7 @@ S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.
 
 <p>On peut maintenant établir la condition suivante.</p>
 
-<p><strong id="id--3688729767766711751-2">Théorème 2.</strong></p>
+<p><strong id="id-1054796923581983845-2">Théorème 2.</strong></p>
 
 <p><script type="math/tex">\ket\psi</script> est non-séparable si et seulement si <script type="math/tex">\sin2\varphi \ne 0.</script></p>
 
@@ -355,7 +368,7 @@ A^2 = A'^2 = B^2 = B'^2 = I.
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
 \begin{split}
-    S(a, a', b, b')^2  &= I - A'\otimes A + B\otimes B' + A'A\otimes  BB' \\
+    S^2  &= I - A'\otimes A + B\otimes B' + A'A\otimes  BB' \\
                      & -A\otimes A' + I - AA'\otimes BB' - B\otimes B' \\
                      & + B'\otimes B - A'A\otimes B'B + I + A'\otimes A \\
                      & + AA'\otimes B'B - B'\otimes B + A\otimes A' + I  \\
@@ -364,12 +377,12 @@ A^2 = A'^2 = B^2 = B'^2 = I.
 
 <p>CQFD</p>
 
-<p>Passons maintenant à l’exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}). Comme un commutateur a une trace nulle, les valeurs propres de l’opérateur hermitien <script type="math/tex">i \comm{A}{A'}</script> sont <script type="math/tex">\alpha</script> et <script type="math/tex">-\alpha</script> pour un certain nombre réel <script type="math/tex">\alpha \ge 0</script>. Soient <script type="math/tex">\ket\alpha</script> et <script type="math/tex">\ket{-\alpha}</script> les vecteurs propres associés. Avec le même raisonnement, les valeurs propres de <script type="math/tex">i \comm{B}{B'}</script> sont <script type="math/tex">\beta</script> et <script type="math/tex">-\beta</script> pour un certain nombre réel <script type="math/tex">\beta \ge 0</script> et les vecteurs propres associés seront notés <script type="math/tex">\ket\beta</script> et <script type="math/tex">\ket{-\beta}</script>. Il est alors immédiat que <script type="math/tex">S^2</script> a deux valeurs propres dégénérées, <script type="math/tex">4 + \alpha\beta</script> et <script type="math/tex">4 -\alpha\beta</script>, qui sont nécessairement positives puisque <script type="math/tex">S^2</script> est positif, et que les espaces propres associés sont respectivement <script type="math/tex">\mathcal{U} = \vec{\ket\alpha\ket\beta, \ket{-\alpha}\ket{-\beta}}</script> et <script type="math/tex">\mathcal{V} = \vec{\ket{-\alpha}\ket\beta, \ket\alpha\ket{-\beta}}</script>.
+<p>Passons maintenant à l’exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}). Comme un commutateur a une trace nulle, les valeurs propres de l’opérateur hermitien <script type="math/tex">i \comm{A}{A'}</script> sont <script type="math/tex">\alpha</script> et <script type="math/tex">-\alpha</script> pour un certain nombre réel <script type="math/tex">\alpha \ge 0</script>. Soient <script type="math/tex">\ket\alpha</script> et <script type="math/tex">\ket{-\alpha}</script> les vecteurs propres associés. Avec le même raisonnement, les valeurs propres de <script type="math/tex">i \comm{B}{B'}</script> sont <script type="math/tex">\beta</script> et <script type="math/tex">-\beta</script> pour un certain nombre réel <script type="math/tex">\beta \ge 0</script> et les vecteurs propres associés seront notés <script type="math/tex">\ket\beta</script> et <script type="math/tex">\ket{-\beta}</script>. Il est alors immédiat que <script type="math/tex">S^2</script> a deux valeurs propres dégénérées, <script type="math/tex">4 + \alpha\beta</script> et <script type="math/tex">4 -\alpha\beta</script>, qui sont nécessairement positives puisque <script type="math/tex">S^2</script> est positif, et que les espaces propres associés sont respectivement <script type="math/tex">\mathcal{U} = \vec{\ket\alpha\ket\beta, \ket{-\alpha}\ket{-\beta}}</script> et <script type="math/tex">\mathcal{V} = \vec{\ket{-\alpha}\ket\beta, \ket\alpha\ket{-\beta}}</script>.<br>
 Par conséquent, les valeurs propres de <script type="math/tex">S</script> s’écrivent ou bien <script type="math/tex">\pm\sqrt{4+\alpha\beta}</script> ou bien <script type="math/tex">\pm\sqrt{4-\alpha\beta}</script>. Les premières (resp. les secondes) ont leurs vecteurs propres dans <script type="math/tex">U</script> (resp. <script type="math/tex">V</script>).</p>
 
 <p>On voit donc que si <script type="math/tex">A</script> commute avec <script type="math/tex">A'</script> ou bien si <script type="math/tex">B</script> commute avec <script type="math/tex">B'</script>, les valeurs propres de <script type="math/tex">S</script> sont égales à <script type="math/tex">\pm2</script>, et par conséquent <script type="math/tex">R(A,A',B,B')</script> est toujours entre -2 et 2: la borne de l’inégalité de Bell n’est violée pour aucun réglage et pour aucun état quantique de la paire <script type="math/tex">\ket\psi</script>. Rappellons en effet que pour un opérateur hermitien tel que <script type="math/tex">S</script>, la borne supérieure de l’espérance <script type="math/tex">\bra\psi S\ket\psi</script>, quand <script type="math/tex">\ket\psi</script> décrit l’ensemble des kets tels que <script type="math/tex">\braket{\psi}{\psi}=1</script>, est la plus grande des valeurs propres de <script type="math/tex">S</script>.</p>
 
-<p>Si au contraire aucune de ces paires d’opérateurs ne commute, alors <script type="math/tex">\alpha\beta > 0</script>. Dans ce cas, les valeurs propres <script type="math/tex">\pm\sqrt{4+\alpha\beta}</script> sont en dehors de l’intervalle <script type="math/tex">[-2,2]</script>.
+<p>Si au contraire aucune de ces paires d’opérateurs ne commute, alors <script type="math/tex">\alpha\beta > 0</script>. Dans ce cas, les valeurs propres <script type="math/tex">\pm\sqrt{4+\alpha\beta}</script> sont en dehors de l’intervalle <script type="math/tex">[-2,2]</script>.<br>
 Quelle violation maximale peut-on obtenir? Comme <script type="math/tex">\matnorm{\comm{A}{A'}} \le 2 \matnorm{A} \matnorm{A'}</script>, nécessairement <script type="math/tex">-2 \le \alpha \le 2</script> puisque <script type="math/tex">\matnorm{A}=\matnorm{A'}=1</script>. De même, <script type="math/tex">-2 \le \beta \le 2</script>. Cela démontre que la borne maximale est <script type="math/tex">2\sqrt{2}</script> comme annoncé plus haut mais nous voyons aussi que cette borne est réalisée quand <script type="math/tex">\alpha = \beta = \pm 2</script>.</p>
 
 <p>Il est facile de voir que l’exemple étudié en <a href="#section-c">section c</a> rentre dans ce théorème. En effet, nous avons vu que la violation maximale est obtenue pour <script type="math/tex">\varphi=\pi/4</script>, et donc avec l’équation (\ref{choice:of:b:for:max:violation}), on a <script type="math/tex">b=-\pi/4</script>, et donc les équations (\ref{pauliDecomposition}) impliquent que <script type="math/tex">\comm{A}{A'}</script> et <script type="math/tex">\comm{B}{B'}</script> admettent comme matrice <script type="math/tex">-2\sigma_y</script> dans les bases respectives <script type="math/tex">\mathcal{B}_1</script> et <script type="math/tex">\mathcal{B}_2</script>. Comme les valeurs propres de <script type="math/tex">\sigma_y</script> sont <script type="math/tex">\pm 1</script>, CQFD.</p>

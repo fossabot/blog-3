@@ -73,6 +73,8 @@ a.flags {
     margin-bottom: 1.4195em; }
   #main #body h6 {
     margin-bottom: 1.9805em; }
+  #main #body blockquote {
+    font-style: italic; }
 #main .bibliography_entry {
   margin-bottom: 0.5em; }
 #main .bibliography_key {

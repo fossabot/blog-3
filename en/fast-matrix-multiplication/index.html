@@ -162,7 +162,7 @@ C_{ij} = \sum_{p=1}^n A_{ip} B_{pj}.
 
 <p>The values <script type="math/tex">k_c</script> = 256 and <script type="math/tex">m_c</script> = 512 fit well with a wide variety of processors, especially the most common x86_64 varieties, as listed in Goto<sup id="fnref:1:1"><a href="#fn:1" class="footnote">4</a></sup> and in the source code of <abbr>OpenBLAS</abbr>. They are however by no means optimal. If one want the utmost performance, one should adapt those values to each architecture by solving the constraints described above, at least approximately.</p>
 
-<p>Eventually, the operations shall be performed on the CPU registers. The third and last layer of blocks is designed to use the registers as efficiently as possible.
+<p>Eventually, the operations shall be performed on the CPU registers. The third and last layer of blocks is designed to use the registers as efficiently as possible.<br>
 The left-hand side is split into thin slices of rows whereas of the right-hand side is split into thin slices of columns, resulting in the decomposition of GEBP into a grid of tiny block, each being the product of two thin panels:</p>
 
 <p class="width640px"><img src="AB-blocking-3.svg" alt="Matrix multiplication blocking (3)"></p>
