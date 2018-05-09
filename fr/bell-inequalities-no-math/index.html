@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport">
 <title>Luc J. Bourhis Musings - Une présentation ludique d'un théorème de Bell</title>
 <link href="../../article.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700,700i%7CRosario:700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i%7CPT+Sans:400,400i,700,700i" rel="stylesheet">
 <meta content="nanoc 4.8.11" name="generator">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -90,8 +90,8 @@ Page Principale
 </span>
 <div class="topic_categories">physique</div>
 <ul class="topic_list">
-<li><a href="../bell-inequalities/">Étude d'une Inégalité de Bell</a></li>
-<li><a href="./">Une présentation ludique d'un théorème de Bell</a></li>
+<li class="titles"><a href="../bell-inequalities/">Étude d'une Inégalité de Bell</a></li>
+<li class="titles"><a href="./">Une présentation ludique d'un théorème de Bell</a></li>
 </ul>
 <hr>
 </div>
@@ -104,10 +104,19 @@ Une présentation ludique d'un théorème de Bell
 Luc J. Bourhis
 </div>
 <div id="body">
+<div class="abstract">
+<p>Dans les années 60, John Bell découvrit que la mécanique quantique était incompatible avec l'existence d'une réalité physique indépendante des observateurs humains, sauf à devoir accepter l'impossibilité de réaliser deux observations indépendament l'une de l'autre, même si les deux observateurs sont très loin l'un de l'autre. Ce théorème eut un grand retentissement car il réduisait énormément les espoirs, portés en partie par Einstein dans les années 30, d'une refondation de la mécanique quantique sur des bases proches de la physique classique. En effet, un des piliers de cette dernière est le réalisme: l'hypothèse d'une réalité physique indépendante de tout observateur, que nous cherchons à cerner du mieux que nous pouvons d'une part en effectuant des observations quantitatives, ou mesures, et d'autre part, en élaborant des modèles mathématiques pour prédire les résultats de ces mesures. La tension entre la mécanique quantique et le réalisme n'apparaît que pour certaines classes de systèmes bien particulières, certes, mais c'est suffisant pour mettre en doute le réalisme en tant que base de la physique.</p>
 
-<p>Mon but est de présenter un théorème de Bell rigoureusement correct sous la forme d’un dialogue, sans mathématiques, même pas l’arithmétique la plus élémentaire, en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour de vraies expériences de physique réalisées en laboratoire.</p>
 
-<p>Je dispose de nombreux jetons, avec une face marquée d’un X et l’autre face marqué d’un Y, qui vont être la base d’un jeu avec mes trois amis Alice, Jessica et Paul. Le jeu consiste à réaliser plusieurs expériences qui toutes procèdent comme suit. Mes trois amis se séparent et vont chacun prendre place dans un isoloir d’où ils ne peuvent pas voir ce que je fais. J’envoie à chacun d’entre eux un jeton numéroté: le jeton 1 à Paul, le 2 à Alice et le 3 à Jessica. Ils sont plongés dans le noir et ne peuvent donc pas voir le jeton qu’ils reçoivent chacun. Le seul moyen à leur disposition pour l’observer est une machine spéciale (j’en ai donné une à chacun d’entre eux): chaque machine à un réglage à deux positions, X ou Y. Quand on y insère le jeton, la machine révèle la couleur de la face spécifiée par le réglage, puis la machine détruit le jeton. Par conséquent, on peut connaître ou bien la couleur de la face X, ou bien de la face Y, au choix, mais jamais la couleur des deux. Pour chaque expérience, je vais indiqué à chacun, à l’avance, le réglage de la machine et chacun notera alors la couleur révélée. On répète cette procédure un grand nombre de fois en utilisant mon très grand stock de jetons. Finalement ils me rejoignent et comparent leur liste d’observations. Le but du jeu est pour Paul, Jessica et Alice de deviner la procédure que j’ai suivi pour préparer les jetons. Mais attention, c’est moi qui choisis le réglage des appareils!</p>
+</div>
+<div class="abstract">
+<p>Mon but est ici de présenter un théorème de Bell rigoureusement correct, mais de le faire sous la forme d'un dialogue, sans mathématiques, même pas l'arithmétique la plus élémentaire. Je vais imaginer une expérience avec des objets de tous les jours, au lieu des particules microscopiques des vraies expériences quantiques. Puis cette expérience sera analysée comme on le ferait pour ces vraies expériences réalisées en laboratoire. Ces objets de tous les jours vont évidemment se comporter de manière quelque peu magique, pour que l'analogie avec les particules quantiques marche, mais c'est là mon but: faire toucher du doigt les éléments fantastiques de la mécanique quantique qui concourt aux théorèmes de Bell.</p>
+
+
+</div>
+<div id="just-after-abstract"></div>
+
+<p>J’ai trois amis, Alice, Jessica et Paul, à qui je vais proposer le jeu suivant. Je dispose de nombreux jetons, avec une face marquée d’un X et l’autre face marqué d’un Y. Le jeu consiste à réaliser plusieurs expériences qui toutes procèdent comme suit. Mes trois amis se séparent et vont chacun prendre place dans un isoloir d’où ils ne peuvent pas voir ce que je fais. J’envoie à chacun d’entre eux un jeton numéroté: le jeton 1 à Paul, le 2 à Alice et le 3 à Jessica. Ils sont plongés dans le noir et ne peuvent donc pas voir le jeton qu’ils reçoivent chacun. Le seul moyen à leur disposition pour l’observer est une machine spéciale (j’en ai donné une à chacun d’entre eux): chaque machine à un réglage à deux positions, X ou Y. Quand on y insère le jeton, la machine révèle la couleur de la face spécifiée par le réglage, puis la machine détruit le jeton. Par conséquent, on peut connaître ou bien la couleur de la face X, ou bien de la face Y, au choix, mais jamais la couleur des deux. Pour chaque expérience, je vais indiqué à chacun, à l’avance, le réglage de la machine et chacun notera alors la couleur révélée. On répète cette procédure un grand nombre de fois en utilisant mon très grand stock de jetons. Finalement ils me rejoignent et comparent leur liste d’observations. Le but du jeu est pour Paul, Jessica et Alice de deviner la procédure que j’ai suivi pour préparer les jetons. Mais attention, c’est moi qui choisis le réglage des appareils!</p>
 
 <p><strong>Première expérience:</strong> Paul examine la face X; Alice et Jessica examine la face Y.</p>
 
@@ -235,7 +244,7 @@ Luc J. Bourhis
 
 <p>Le théorème de Jessica de mon histoire est un théorème de Bell dû à David Mermin. Si je l’avais formalisé mathématiquement, cela aurait été une égalité, ce que l’on peut deviner en observant que le résultat de Jessica est “exact”. Je veux dire par là que Jessica ne dit pas par exemple que dans la moitié des cas en moyenne, il y aura ceci ou cela: elle affirme un résultat valable pour toutes les observations. Nombres d’entre vous sont accoutumés à l’expression “inégalités de Bell”, inégalités portant sur la probabilité d’observer ceci ou cela, et vous en serez peut-être étonné. Il se trouve que les théorèmes de Bell les mieux à même d’être vérifiés par de vraies expériences, par opposition aux expériences de pensée de ce billet, et bien ce sont des inégalités. Mais d’un point de vue purement conceptuel, rien n’interdit des égalités, ce qui fut publié pour la première fois par <a href="#Greenberger:1990aa" class="bibliography-reference"> Greenberger et al (1990)</a>. L’égalité de Bell proposée par Jessica dans mon histoire fut publiée par <a href="#Mermin:1990ab" class="bibliography-reference"> Mermin (1990)</a>. Mes jetons sont une analogie pour les spin 1/2 utilisé par Mermin: c’est pour cela que j’ai appelé les faces X et Y. Elles correspondent à la mesure du spin selon les directions des mêmes noms. Quant aux couleurs, blanc et noir, elles correspondent aux mesures +1/2 et -1/2.</p>
 
-<p>L’argument de Paul, pour justifier que les faces doivent avoir des couleurs bien définie avant leur observation, est le pendant de l’argument classique d’Einstein, Podolsky et Rosen, dit argument EPR: des corrélations parfaites entre des systèmes distants, et qui par conséquent ne peuvent pas interagir, requièrent l’existence d’une cause préalable. Les théorèmes de Bell contredisent précisément ce point.</p>
+<p>L’argument de Paul, pour justifier que les faces doivent avoir des couleurs bien définie avant leur observation, est le pendant de l’argument classique d’<a href="#Einstein:1935aa" class="bibliography-reference"> Einstein,  Podolsky, et  Rosen (1935)</a>, dit argument EPR: des corrélations parfaites entre des systèmes distants, et qui par conséquent ne peuvent pas interagir, requièrent l’existence d’une cause préalable. Les théorèmes de Bell contredisent précisément ce point.</p>
 
 <p>La “lacune de localité” identifiée par mes protagonistes est un problème auquel les chercheurs réalisant ce genre d’expérience durent faire face, en utilisant une solution conceptuellement similaire à celle de Jessica. Comme les articles scientifiques sont publiés en anglais, le terme universellement utilisé est l’expression “locality loophole”.</p>
 
@@ -243,6 +252,16 @@ Luc J. Bourhis
 
 </div>
 <h2>Bibliographie</h2>
+<div class="bibliography_entry" id="Einstein:1935aa">
+<span class="bibliography_key">
+ Einstein,  Podolsky, et  Rosen (1935)
+</span>
+A.  Einstein, B.  Podolsky, et N.  Rosen.
+Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?,
+<em>Phys. Rev.</em>,
+47:777--780,
+1935
+</div>
 <div class="bibliography_entry" id="Greenberger:1990aa">
 <span class="bibliography_key">
  Greenberger et al (1990)

@@ -15,8 +15,8 @@
   /*
    * Do not forget to add those Google web fonts to config file `nanoc.yaml`
    */
-  font-family: "Crimson Text", serif;
-  font-size: 1.5625em;
+  font-family: "PT Serif", serif;
+  font-size: 1.375em;
   /*
    * Fonts installed on this site
    */
@@ -25,13 +25,13 @@
    */ }
   @media (min-device-width: 90.0625em) {
     :root {
-      font-size: 1.3125em; } }
+      font-size: 1.0625em; } }
 
 body {
   margin: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Rosario", sans-serif; }
+  font-family: "PT Sans"; }
 
 #main {
   padding: 1em;
@@ -75,6 +75,10 @@ a.flags {
     margin-bottom: 1.9805em; }
   #main #body blockquote {
     font-style: italic; }
+#main .abstract {
+  font-style: italic; }
+#main #just-after-abstract {
+  visibility: hidden; }
 #main .bibliography_entry {
   margin-bottom: 0.5em; }
 #main .bibliography_key {
@@ -103,6 +107,8 @@ a.flags {
   display: none;
   margin-top: 1em;
   margin-bottom: 2em; }
+  .topics .titles a {
+    text-decoration: none; }
 
 .topic_categories {
   text-transform: uppercase;

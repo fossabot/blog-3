@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport">
 <title>Luc J. Bourhis Musings - Étude d'une Inégalité de Bell</title>
 <link href="../../article.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700,700i%7CRosario:700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i%7CPT+Sans:400,400i,700,700i" rel="stylesheet">
 <meta content="nanoc 4.8.11" name="generator">
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -93,8 +93,8 @@ Page Principale
 </span>
 <div class="topic_categories">physique</div>
 <ul class="topic_list">
-<li><a href="./">Étude d'une Inégalité de Bell</a></li>
-<li><a href="../bell-inequalities-no-math/">Une présentation ludique d'un théorème de Bell</a></li>
+<li class="titles"><a href="./">Étude d'une Inégalité de Bell</a></li>
+<li class="titles"><a href="../bell-inequalities-no-math/">Une présentation ludique d'un théorème de Bell</a></li>
 </ul>
 <hr>
 </div>
@@ -107,8 +107,18 @@ Page Principale
 Luc J. Bourhis
 </div>
 <div id="body">
+<div class="abstract">
+<p>Dans les années 60, John Bell découvrit que la mécanique quantique était incompatible avec l'existence d'une réalité physique indépendante des observateurs humains, sauf à devoir accepter l'impossibilité de réaliser deux observations indépendament l'une de l'autre, même si les deux observateurs sont très loin l'un de l'autre. Ce théorème eut un grand retentissement car il réduisait énormément les espoirs, portés en partie par Einstein dans les années 30, d'une refondation de la mécanique quantique sur des bases proches de la physique classique. En effet, un des piliers de cette dernière est le réalisme: l'hypothèse d'une réalité physique indépendante de tout observateur, que nous cherchons à cerner du mieux que nous pouvons d'une part en effectuant des observations quantitatives, ou mesures, et d'autre part, en élaborant des modèles mathématiques pour prédire les résultats de ces mesures. La tension entre la mécanique quantique et le réalisme n'apparaît que pour certaines classes de systèmes bien particulières, certes, mais c'est suffisant pour mettre en doute le réalisme en tant que base de la physique.</p>
 
-<p>Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot “classique” est ici entendu par opposition à “quantique”. Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, je vais démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l’honneur du chercheur qui démontra la première d’entre elles. De nombreuses expériences différentes ont été réalisées, dont je donnerais un aperçu, menant à une double conclusion: d’une part, leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme; d’autre part, ils sont en accord avec les prédictions de la mécanique quantique.</p>
+
+</div>
+<div class="abstract">
+<p>Par la suite, de nombreux résultats similaires furent découverts par d'autres chercheurs, et ils furent tous nommé théorème de Bell, en l'honneur de ce dernier. En particulier, plusieurs inégalités de Bell furent prouvées dans les années 1970 puis testées expérimentalement.
+Dans cet article, je vais présenter en détails une de ces inégalités. Je vais montrer comment elle est la conséquence des hypothèses de réalisme et de localité appliquées à un dispositif expérimental simple. Je montrerais ensuite que les prédictions de la mécanique quantique violent ces inégalités. Cette expérience n'est pas réalisable en pratique mais des variantes furent réalisées. Les résultats donnèrent raison à la mécanique quantique: les inégalités de Bell étaient belle et bien violées. Je donnerais les références des expériences les plus marquantes.</p>
+
+
+</div>
+<div id="just-after-abstract"></div>
 
 <h2 id="1-lexpérience">1. L’expérience</h2>
 
@@ -220,7 +230,7 @@ S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.
 
 <p>Ceci étant posé, le premier résultat important que:</p>
 
-<p><strong id="id-3138826578749699874-1">Théorème 1.</strong><br>
+<p><strong id="id-4000674613876018162-1">Théorème 1.</strong><br>
  L’espérance de <script type="math/tex">S</script> pour un ket séparable <script type="math/tex">\ket\psi=\ket\phi\ket\xi</script> ne viole pas les inégalités CHSH.</p>
 
 <p>Dans ce cas,</p>
@@ -231,7 +241,7 @@ S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.
 
 <p>où les espérances sont pour <script type="math/tex">\ket\phi</script> dans le cas de <script type="math/tex">A</script> et <script type="math/tex">A'</script> et pour <script type="math/tex">\ket\xi</script> dans le cas de <script type="math/tex">B</script> et <script type="math/tex">B'</script>. Le théorème résulte alors du lemme suivant.</p>
 
-<p><strong id="id-4107798361367209429-1">Lemme 1.</strong><br>
+<p><strong id="id-4581439952871254124-1">Lemme 1.</strong><br>
  Si <script type="math/tex">u</script>, <script type="math/tex">v</script>, <script type="math/tex">x</script>, et <script type="math/tex">y</script> sont dans <script type="math/tex">[-1, 1]</script>, alors</p>
 
 <script type="math/tex; mode=display">\begin{equation}
@@ -269,7 +279,7 @@ Y < 0 %]]></script>, alors <script type="math/tex">uX + vY \le X-Y \le 1</script
 
 <p>On peut maintenant établir la condition suivante.</p>
 
-<p><strong id="id-3138826578749699874-2">Théorème 2.</strong></p>
+<p><strong id="id-4000674613876018162-2">Théorème 2.</strong></p>
 
 <p><script type="math/tex">\ket\psi</script> est non-séparable si et seulement si <script type="math/tex">\sin2\varphi \ne 0.</script></p>
 
@@ -315,9 +325,12 @@ Y < 0 %]]></script>, alors <script type="math/tex">uX + vY \le X-Y \le 1</script
 
 <p>En utilisant alors le fait que</p>
 
-<script type="math/tex; mode=display">\begin{equation}
-\bra{\phi_i}\bra{\theta_i}S_{1,e}\otimes S_{2,f}\ket{\phi_j}\ket{\theta_j} = \bra{\phi_i}S_{1,e}\ket{\phi_j}\bra{\theta_i}S_{2,f}\ket{\theta_j}=\left(\sigma_e\right)_{ij}\left(\sigma_f\right)_{ij},
-\end{equation}</script>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{aligned}
+\bra{\phi_i}\bra{\theta_i}S_{1,e}\otimes S_{2,f}\ket{\phi_j}\ket{\theta_j} &= \bra{\phi_i}S_{1,e}\ket{\phi_j}\bra{\theta_i}S_{2,f}\ket{\theta_j}\\&=\left(\sigma_e\right)_{ij}\left(\sigma_f\right)_{ij},
+\end{aligned}
+\end{equation} %]]></script>
 
 <p>on trouve facilement, en notant que les termes <script type="math/tex">S_x\otimes S_z</script> et <script type="math/tex">S_z\otimes S_x</script> donnent des contributions nulles, que</p>
 
@@ -464,7 +477,7 @@ Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?,
  Gisin et  Peres (1992)
 </span>
 N.  Gisin, et A.  Peres.
-Maximal violation of {B}ell's inequality for arbitrarily large spin,
+Maximal violation of Bell's inequality for arbitrarily large spin,
 <em>Physics Letters A</em>,
 162:15 - 17,
 1992
